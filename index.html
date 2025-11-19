@@ -654,13 +654,19 @@
       text-shadow: 0 0 10px rgba(79, 140, 255, 0.7);
     }
 
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 26px;
-    }
+   /* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 26px;
+}
 
+/* Mobile fix: jedna kolona */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
     .about-block {
       background: rgba(8, 9, 18, 0.96);
       border-radius: var(--radius-xl);
@@ -1207,3 +1213,4 @@
   </div>
 </body>
 </html>
+
