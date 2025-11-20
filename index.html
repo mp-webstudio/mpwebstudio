@@ -28,6 +28,10 @@
   <meta name="twitter:description" content="Premium web dizajn i SEO za ozbiljne biznise.">
   <meta name="twitter:image" content="img/og-image.png">
 
+  <!-- Preconnect / DNS Prefetch za Google Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Faviconi -->
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
@@ -36,6 +40,29 @@
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+
+  <!-- Preload logo animacije -->
+  <link rel="preload" href="img/logo-mockup.png" as="image">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MP Web Studio",
+    "url": "https://mpwebstudio.rs/",
+    "description": "MP Web Studio izrađuje moderne, brze i profesionalne web sajtove za lokalne biznise i preduzetnike. Premium web dizajn, SEO optimizacija i kompletan online nastup.",
+    "telephone": "+38163582132",
+    "email": "mpucar1980@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Novi Sad",
+      "addressCountry": "RS"
+    },
+    "areaServed": "RS"
+  }
+  </script>
 
   <style>
     :root {
@@ -48,6 +75,11 @@
       --danger: #ff4f7b;
       --radius-xl: 26px;
       --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.75);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
     }
 
     * {
@@ -82,7 +114,6 @@
       opacity: 0.9;
       z-index: -1;
     }
-
     /* HEADER */
     header {
       display: flex;
@@ -166,6 +197,62 @@
       background: rgba(79, 140, 255, 0.22);
     }
 
+    /* Hamburger dugme */
+    .nav-toggle {
+      display: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 140, 255, 0.55);
+      background: rgba(5, 5, 18, 0.96);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-toggle-line {
+      position: relative;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .nav-toggle-line::before,
+    .nav-toggle-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: #ffffff;
+      transition: 0.25s ease;
+    }
+
+    .nav-toggle-line::before {
+      top: -5px;
+    }
+
+    .nav-toggle-line::after {
+      top: 5px;
+    }
+
+    nav.open .nav-toggle-line {
+      background: transparent;
+    }
+
+    nav.open .nav-toggle-line::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    nav.open .nav-toggle-line::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
     /* HERO */
     .hero {
       display: grid;
@@ -224,7 +311,6 @@
       gap: 12px;
       align-items: center;
     }
-
     .btn-primary {
       background: linear-gradient(135deg, #4f8cff, #88a9ff);
       padding: 11px 22px;
@@ -328,7 +414,7 @@
     .dot.yellow { background: #febc2e; }
     .dot.green { background: #28c840; }
 
-    /* ANIMIRANI MOCKUP */
+    /* ANIMIRANI MOCKUP + LOGO */
     .hero-mock-line {
       height: 130px;
       border-radius: 14px;
@@ -338,6 +424,9 @@
       background: linear-gradient(-45deg, #1b2645, #3b4d7c, #7a3f7f, #253b75);
       background-size: 280% 280%;
       animation: heroGradient 20s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-mock-line::before {
@@ -363,6 +452,39 @@
       mix-blend-mode: screen;
       opacity: 0.85;
       animation: floatParticles 26s linear infinite;
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .hero-logo {
+      max-width: 260px;
+      width: 70%;
+      opacity: 0;
+      transform: translateY(12px) scale(0.94);
+      animation: heroLogoPop 1.6s ease-out forwards;
+      filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.8));
+    }
+
+    @keyframes heroLogoPop {
+      0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.9);
+      }
+      55% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     @keyframes heroGradient {
@@ -398,7 +520,6 @@
       opacity: 0.5;
       pointer-events: none;
     }
-
     /* TRUST STRIP */
     .trust-strip {
       margin: 26px 0 52px;
@@ -581,7 +702,6 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
-
     /* PORTFOLIO */
     .portfolio-grid {
       display: grid;
@@ -612,6 +732,7 @@
       object-fit: cover;
       display: block;
       transition: 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .portfolio-card:hover img {
@@ -655,17 +776,11 @@
     }
 
     /* ABOUT */
-   .about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 26px;
-  }
-
-  /* Mobile fix: jedna kolona */
-  @media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 26px;
+    }
 
     .about-block {
       background: rgba(8, 9, 18, 0.96);
@@ -815,6 +930,21 @@
       padding: 10px 16px 16px;
       opacity: 0.7;
     }
+    /* SCROLL ANIMACIJE */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.delay-1 { transition-delay: 0.15s; }
+    .reveal.delay-2 { transition-delay: 0.30s; }
+    .reveal.delay-3 { transition-delay: 0.45s; }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -834,10 +964,40 @@
       nav {
         width: 100%;
         justify-content: space-between;
+        position: relative;
+      }
+
+      .nav-toggle {
+        display: flex;
       }
 
       .nav-links {
-        display: none; /* za sada bez burger menija */
+        position: absolute;
+        top: 52px;
+        right: 0;
+        left: auto;
+        background: rgba(5, 5, 18, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 14px;
+        border-radius: 18px;
+        border: 1px solid rgba(79, 140, 255, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        gap: 10px;
+        display: none;
+        z-index: 50;
+      }
+
+      nav.open .nav-links {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -853,6 +1013,10 @@
       section {
         margin-bottom: 64px;
       }
+
+      .portfolio-image img {
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -863,7 +1027,7 @@
   <div class="page">
 
     <!-- HEADER -->
-    <header>
+    <header class="reveal show">
       <div class="logo">
         <div class="logo-mark">MP</div>
         <div>
@@ -880,32 +1044,36 @@
           <a href="#about">O nama</a>
           <a href="#contact">Kontakt</a>
         </div>
+
         <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
           Zakažite konsultaciju
         </button>
+
+        <button class="nav-toggle" type="button" aria-label="Otvori meni">
+          <span class="nav-toggle-line"></span>
+        </button>
       </nav>
     </header>
-
     <!-- HERO -->
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal">
       <div>
-        <h1 class="hero-title">
+        <h1 class="hero-title reveal">
           <span class="accent">Premium web sajtovi</span><br>
           za biznise koji žele ozbiljnost.
         </h1>
 
-        <p class="hero-subtitle">
+        <p class="hero-subtitle reveal delay-1">
           Pravimo moderne, brze i profesionalne web sajtove koji prikazuju vaš biznis onako kako zaslužuje –
           jasno, ozbiljno i sa fokusom na klijente i rezultate.
         </p>
 
-        <div class="hero-badges">
+        <div class="hero-badges reveal delay-2">
           <span class="badge">⚡ Sajt spreman za 2–7 dana</span>
           <span class="badge">📍 Fokus na lokalne biznise</span>
           <span class="badge">🔍 SEO optimizacija uključena</span>
         </div>
 
-        <div class="hero-cta-row">
+        <div class="hero-cta-row reveal delay-3">
           <a class="btn-primary" href="https://wa.me/38163582132" target="_blank" rel="noopener">
             Pošaljite poruku na WhatsApp
           </a>
@@ -915,12 +1083,12 @@
           </a>
         </div>
 
-        <p class="hero-note">
+        <p class="hero-note reveal delay-3">
           Radimo sa malim i srednjim biznisima, preduzetnicima, ugostiteljima, servisima, agencijama…
         </p>
       </div>
 
-      <div class="hero-right">
+      <div class="hero-right reveal delay-2">
         <div class="hero-card">
           <div class="spark"></div>
           <div class="hero-card-tag">
@@ -933,7 +1101,13 @@
               <div class="dot yellow"></div>
               <div class="dot green"></div>
             </div>
-            <div class="hero-mock-line"></div>
+
+            <div class="hero-mock-line">
+              <div class="hero-logo-wrap">
+                <img src="img/logo-mockup.png" alt="MP Web Studio logo" class="hero-logo">
+              </div>
+            </div>
+
             <div class="hero-card-footer">
               <span>Profesionalni dizajn • SEO • Lokalni biznisi</span>
               <span>100% responsive</span>
@@ -944,7 +1118,7 @@
     </section>
 
     <!-- TRUST STRIP -->
-    <div class="trust-strip">
+    <div class="trust-strip reveal">
       <div class="trust-left">
         <div class="trust-stars">★★★★★</div>
         <div>Fokus na jasnoću, brzinu i poverenje – sajt koji deluje ozbiljno čim se otvori.</div>
@@ -958,7 +1132,7 @@
     </div>
 
     <!-- USLUGE -->
-    <section id="services">
+    <section id="services" class="reveal">
       <h2 class="section-title">Usluge i paketi</h2>
       <p class="section-subtitle">
         Pravimo sajtove koji izgledaju ozbiljno, rade brzo i pomažu da vas klijenti lako pronađu.
@@ -967,7 +1141,7 @@
 
       <div class="services-grid">
 
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="service-tag">Za male biznise i početnike</div>
           <h3>START paket</h3>
           <div class="service-price">od 69 €</div>
@@ -980,7 +1154,7 @@
           </ul>
         </div>
 
-        <div class="service-card highlight">
+        <div class="service-card highlight reveal delay-1">
           <div class="service-ribbon">Najtraženiji paket</div>
           <div class="service-tag">Za firme koje žele ozbiljan nastup</div>
           <h3>BIZNIS paket</h3>
@@ -994,8 +1168,8 @@
           </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-tag">Za one koji žele maksimum</div>
+        <div class="service-card reveal delay-2">
+          <div class="service-tag">Za one koji žele максимум</div>
           <h3>PRO paket</h3>
           <div class="service-price">od 249 €</div>
           <p class="service-desc">Napredni paket za biznise koji žele potpun digitalni nastup.</p>
@@ -1009,9 +1183,8 @@
 
       </div>
     </section>
-
     <!-- ZAŠTO MI -->
-    <section id="why">
+    <section id="why" class="reveal">
       <h2 class="section-title">Zašto baš MP Web Studio?</h2>
       <p class="section-subtitle">
         Kombinujemo praktično poslovno iskustvo i moderan web dizajn. Razumemo kako razmišljaju klijenti,
@@ -1019,21 +1192,21 @@
       </p>
 
       <div class="why-grid">
-        <div class="why-card">
+        <div class="why-card reveal">
           <div class="why-label">Pristup</div>
           <h3>Ne pravimo “još jedan sajt”</h3>
           <p>Svaki projekat posmatramo kao vaš digitalni izlog – mesto gde se odlučuje poverenje.
              Fokus nam je jasnoća, jednostavnost i poruka koja pogađa baš vašeg klijenta.</p>
         </div>
 
-        <div class="why-card">
+        <div class="why-card reveal delay-1">
           <div class="why-label">Iskustvo</div>
           <h3>Razumemo biznis, ne samo kod</h3>
           <p>Dolazimo iz sveta finansija, analize i rada sa klijentima – zato znamo šta je važno
              vlasniku firme: da sajt izgleda ozbiljno, da bude jasan i da radi bez komplikacija.</p>
         </div>
 
-        <div class="why-card">
+        <div class="why-card reveal delay-2">
           <div class="why-label">Podrška</div>
           <h3>Tu smo i posle izrade sajta</h3>
           <p>Ne nestajemo nakon isporuke. Po potrebi radimo izmene teksta, dodajemo slike,
@@ -1043,7 +1216,7 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio">
+    <section id="portfolio" class="reveal">
       <h2 class="section-title">Portfolio – naši radovi</h2>
       <p class="section-subtitle">
         Nekoliko primera sajtova koje smo radili za lokalne klijente. Svaki je prilagođen
@@ -1052,9 +1225,12 @@
 
       <div class="portfolio-grid">
 
-        <div class="portfolio-card">
+        <div class="portfolio-card reveal">
           <div class="portfolio-image">
-            <img src="img/autoservis.jpg" alt="Autoservis 3NS Novi Sad – web sajt" />
+            <img src="img/autoservis.jpg"
+                 alt="Autoservis 3NS Novi Sad – web sajt"
+                 loading="lazy"
+                 decoding="async" />
           </div>
           <div class="portfolio-content">
             <h3>Autoservis 3NS</h3>
@@ -1066,9 +1242,12 @@
           </div>
         </div>
 
-        <div class="portfolio-card">
+        <div class="portfolio-card reveal delay-1">
           <div class="portfolio-image">
-            <img src="img/konoba.jpg" alt="Konoba Orkus – web sajt" />
+            <img src="img/konoba.jpg"
+                 alt="Konoba Orkus – web sajt"
+                 loading="lazy"
+                 decoding="async" />
           </div>
           <div class="portfolio-content">
             <h3>Konoba Orkus</h3>
@@ -1080,9 +1259,12 @@
           </div>
         </div>
 
-        <div class="portfolio-card">
+        <div class="portfolio-card reveal delay-2">
           <div class="portfolio-image">
-            <img src="img/mojstan.jpg" alt="Moj Stan NS – profesionalni upravnik" />
+            <img src="img/mojstan.jpg"
+                 alt="Moj Stan NS – profesionalni upravnik"
+                 loading="lazy"
+                 decoding="async" />
           </div>
           <div class="portfolio-content">
             <h3>Moj Stan NS</h3>
@@ -1096,9 +1278,8 @@
 
       </div>
     </section>
-
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="reveal">
       <h2 class="section-title">O nama</h2>
       <p class="section-subtitle">
         MP Web Studio je mali, fokusirani studio koji spaja znanje iz finansija, rada sa klijentima
@@ -1106,10 +1287,10 @@
       </p>
 
       <div class="about-grid">
-        <div class="about-block">
+        <div class="about-block reveal">
           <h3>Ko stoji iza MP Web Studio?</h3>
           <p>
-            Iza studija je kombinacija – <strong>Kombinacija ljudi iz sveta finansija i IT sektora</strong>.
+            Iza studija je kombinacija – <strong>ljudi iz sveta finansija i IT sektora</strong>.
             Zajedno donosimo iskustvo rada sa firmama, finansijskom analizom, brojevima i realnim biznis situacijama.
             IT sektor pomaže da svaki piksel, linija koda i tekst budu na svom mestu.
           </p>
@@ -1119,7 +1300,7 @@
           </p>
         </div>
 
-        <div class="about-block">
+        <div class="about-block reveal delay-1">
           <h3>Šta dobijate saradnjom sa nama?</h3>
           <ul class="about-list">
             <li>Sajt koji deluje profesionalno i ozbiljno.</li>
@@ -1133,7 +1314,7 @@
     </section>
 
     <!-- KONTAKT -->
-    <section id="contact">
+    <section id="contact" class="reveal">
       <h2 class="section-title">Kontakt i saradnja</h2>
       <p class="section-subtitle">
         Pošaljite nam kratku poruku o vašem biznisu i kakav sajt vam treba.
@@ -1142,7 +1323,7 @@
 
       <div class="contact-grid">
 
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <h3>Kontakt podaci</h3>
 
           <p><strong>Email:</strong><br>
@@ -1163,7 +1344,7 @@
           </p>
         </div>
 
-        <div class="contact-card">
+        <div class="contact-card reveal delay-1">
           <h3>Brza poruka</h3>
           <p>
             Izaberite kanal koji vam najviše odgovara. Javićemo se sa povratnom porukom
@@ -1191,7 +1372,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="reveal">
       <div class="footer-inner">
         <div>
           <div class="footer-brand">MP Web Studio</div>
@@ -1211,6 +1392,45 @@
     </footer>
 
   </div>
+  <script>
+    // HAMBURGER MENI
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.querySelector("header nav");
+      const toggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          nav.classList.toggle("open");
+        });
+
+        navLinks.forEach(link => {
+          link.addEventListener("click", function () {
+            nav.classList.remove("open");
+          });
+        });
+      }
+
+      // SCROLL REVEAL ANIMACIJE
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        }, {
+          threshold: 0.15
+        });
+
+        revealElements.forEach(el => scrollObserver.observe(el));
+      } else {
+        // Fallback – sve prikaži
+        revealElements.forEach(el => el.classList.add("show"));
+      }
+    });
+  </script>
 </body>
 </html>
-
