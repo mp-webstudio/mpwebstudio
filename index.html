@@ -114,6 +114,7 @@
       opacity: 0.9;
       z-index: -1;
     }
+
     /* HEADER */
     header {
       display: flex;
@@ -122,7 +123,6 @@
       gap: 16px;
       margin-bottom: 32px;
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -311,6 +311,7 @@
       gap: 12px;
       align-items: center;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, #4f8cff, #88a9ff);
       padding: 11px 22px;
@@ -349,7 +350,6 @@
       justify-content: center;
       gap: 6px;
     }
-
     .btn-ghost:hover {
       border-color: rgba(79, 140, 255, 0.7);
       background: rgba(79, 140, 255, 0.16);
@@ -519,6 +519,26 @@
       background: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.3), transparent 55%);
       opacity: 0.5;
       pointer-events: none;
+    }
+
+    /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+    /* DODAT CSS DA SE VIDEO VIDI CEO */
+    /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 130px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* KLJUČNO — video se vidi ceo */
+      background: #000;
+      display: block;
     }
     /* TRUST STRIP */
     .trust-strip {
@@ -702,6 +722,7 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
+
     /* PORTFOLIO */
     .portfolio-grid {
       display: grid;
@@ -774,7 +795,6 @@
       color: #a9c3ff;
       text-shadow: 0 0 10px rgba(79, 140, 255, 0.7);
     }
-
     /* ABOUT */
     .about-grid {
       display: grid;
@@ -930,6 +950,7 @@
       padding: 10px 16px 16px;
       opacity: 0.7;
     }
+
     /* SCROLL ANIMACIJE */
     .reveal {
       opacity: 0;
@@ -947,6 +968,7 @@
     .reveal.delay-3 { transition-delay: 0.45s; }
 
     /* RESPONSIVE */
+
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -1025,7 +1047,6 @@
   <div class="bg-glow"></div>
 
   <div class="page">
-
     <!-- HEADER -->
     <header class="reveal show">
       <div class="logo">
@@ -1054,6 +1075,7 @@
         </button>
       </nav>
     </header>
+
     <!-- HERO -->
     <section id="home" class="hero reveal">
       <div>
@@ -1091,10 +1113,12 @@
       <div class="hero-right reveal delay-2">
         <div class="hero-card">
           <div class="spark"></div>
+
           <div class="hero-card-tag">
             <span>Live preview – MP Web Studio</span>
             <span style="color: var(--accent); font-weight: 500;">2025</span>
           </div>
+
           <div class="hero-card-main">
             <div class="hero-browser-dots">
               <div class="dot red"></div>
@@ -1102,14 +1126,12 @@
               <div class="dot green"></div>
             </div>
 
-           <div class="hero-mock-line video-wrapper">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="img/hero-video.mp4" type="video/mp4">
-  </video>
-
-  <!-- Refleksija ekrana (gornji glossy “monitor shine”) -->
-  <div class="screen-reflection"></div>
-</div>
+            <!-- VIDEO U EKRANČIĆU (ispravljeno, vidi se ceo video) -->
+            <div class="hero-mock-line video-wrapper">
+              <video class="hero-video" autoplay muted loop playsinline>
+                <source src="img/hero-video.mp4" type="video/mp4">
+              </video>
+            </div>
 
             <div class="hero-card-footer">
               <span>Profesionalni dizajn • SEO • Lokalni biznisi</span>
@@ -1126,6 +1148,7 @@
         <div class="trust-stars">★★★★★</div>
         <div>Fokus na jasnoću, brzinu i poverenje – sajt koji deluje ozbiljno čim se otvori.</div>
       </div>
+
       <div class="trust-logos">
         <div class="pill">Autoservis 3NS</div>
         <div class="pill">Konoba Orkus</div>
@@ -1172,7 +1195,7 @@
         </div>
 
         <div class="service-card reveal delay-2">
-          <div class="service-tag">Za one koji žele максимум</div>
+          <div class="service-tag">Za one koji žele maksimum</div>
           <h3>PRO paket</h3>
           <div class="service-price">od 249 €</div>
           <p class="service-desc">Napredni paket za biznise koji žele potpun digitalni nastup.</p>
@@ -1186,6 +1209,7 @@
 
       </div>
     </section>
+
     <!-- ZAŠTO MI -->
     <section id="why" class="reveal">
       <h2 class="section-title">Zašto baš MP Web Studio?</h2>
@@ -1281,12 +1305,13 @@
 
       </div>
     </section>
+
     <!-- ABOUT -->
     <section id="about" class="reveal">
       <h2 class="section-title">O nama</h2>
       <p class="section-subtitle">
         MP Web Studio je mali, fokusirani studio koji spaja znanje iz finansija, rada sa klijentima
-        i modernog web dizajna. Radimo direktno sa vlasnicima biznisa – bez komplikacije.
+        i modernog web dizajna.
       </p>
 
       <div class="about-grid">
@@ -1321,7 +1346,6 @@
       <h2 class="section-title">Kontakt i saradnja</h2>
       <p class="section-subtitle">
         Pošaljite nam kratku poruku o vašem biznisu i kakav sajt vam treba.
-        Najbrže odgovaramo preko aplikacija WhatsApp i Viber.
       </p>
 
       <div class="contact-grid">
@@ -1343,15 +1367,14 @@
           </p>
 
           <p class="contact-note">
-            Možete poslati i slike / primere sajtova koji vam se dopadaju – lakše je da pogodimo stil koji želite.
+            Možete poslati i slike / primere sajtova koji vam se dopadaju.
           </p>
         </div>
 
         <div class="contact-card reveal delay-1">
           <h3>Brza poruka</h3>
           <p>
-            Izaberite kanal koji vam najviše odgovara. Javićemo se sa povratnom porukom
-            i konkretnim predlogom za vaš sajt.
+            Izaberite kanal koji vam najviše odgovara.
           </p>
 
           <div class="contact-buttons">
@@ -1367,7 +1390,7 @@
           </div>
 
           <p class="contact-note">
-            U poruci ukratko napišite čime se bavite i da li već imate neke ideje ili primere sajtova.
+            U poruci ukratko napišite čime se bavite i da li već imate neke ideje.
           </p>
         </div>
 
@@ -1379,7 +1402,7 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand">MP Web Studio</div>
-          <div class="footer-text">Premium web dizajn • SEO • Branding za lokalne biznise i preduzetnike.</div>
+          <div class="footer-text">Premium web dizajn • SEO • Branding za lokalne biznise i preduzetnike</div>
         </div>
         <div class="footer-links">
           <a href="#home">Početna</a>
@@ -1390,11 +1413,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        © 2025 MP Web Studio — Sva prava zadržana • mpwebstudio.rs
+        © 2025 MP Web Studio — Sva prava zadržana
       </div>
     </footer>
 
   </div>
+
   <script>
     // HAMBURGER MENI
     document.addEventListener("DOMContentLoaded", function () {
@@ -1414,7 +1438,7 @@
         });
       }
 
-      // SCROLL REVEAL ANIMACIJE
+      // SCROLL REVEAL
       const revealElements = document.querySelectorAll(".reveal");
 
       if ("IntersectionObserver" in window) {
@@ -1424,19 +1448,14 @@
               entry.target.classList.add("show");
             }
           });
-        }, {
-          threshold: 0.15
-        });
+        }, { threshold: 0.15 });
 
         revealElements.forEach(el => scrollObserver.observe(el));
       } else {
-        // Fallback – sve prikaži
         revealElements.forEach(el => el.classList.add("show"));
       }
     });
   </script>
+
 </body>
 </html>
-
-
-
