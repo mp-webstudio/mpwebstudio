@@ -994,21 +994,23 @@
       }
 
       .nav-links {
-        position: absolute;
-        top: 52px;
-        right: 0;
-        left: auto;
-        background: rgba(5, 5, 18, 0.98);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 12px 14px;
-        border-radius: 18px;
-        border: 1px solid rgba(79, 140, 255, 0.4);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-        gap: 10px;
-        display: none;
-        z-index: 50;
-      }
+  position: absolute;
+  top: 52px;
+  right: 0;
+  left: auto;
+  background: rgba(5, 5, 18, 0.98);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(79, 140, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  gap: 10px;
+  display: none;
+
+  /* DODATO */
+  z-index: 9999;
+}
 
       nav.open .nav-links {
         display: flex;
@@ -1475,6 +1477,7 @@
 
 </body>
 </html>
+
 
 
 
