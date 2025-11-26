@@ -1044,6 +1044,26 @@
         height: auto;
       }
     }
+    /* FIKSIRAN HAMBURGER U GORNJEM DESNOM UGLU NA MOBILNOM */
+@media (max-width: 900px) {
+  .nav-toggle {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 999999; /* uvek iznad svega */
+    background: rgba(5, 5, 18, 0.95);
+    border: 1px solid rgba(79, 140, 255, 0.55);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.55);
+  }
+
+  nav.open .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 16px;
+    left: auto;
+    z-index: 999998;
+  }
+}
   </style>
 
 <!-- Google Analytics (GA4) -->
@@ -1496,6 +1516,7 @@
 
 </body>
 </html>
+
 
 
 
