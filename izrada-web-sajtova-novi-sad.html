@@ -4,88 +4,781 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Izrada Web Sajtova Novi Sad | Profesionalni Web Dizajn | MP Web Studio</title>
+  <title>Izrada web sajtova Novi Sad | MP Web Studio – Profesionalni web dizajn</title>
 
-  <meta name="description" content="Profesionalna izrada web sajtova u Novom Sadu. Brzi, moderni i SEO-optimizovani sajtovi za firme, preduzetnike i ugostitelje. MP Web Studio – vaš partner za digitalni nastup.">
-  <meta name="keywords" content="izrada web sajtova novi sad, pravljenje sajta novi sad, web dizajn novi sad, mp web studio, izrada sajta cena novi sad">
+  <meta name="description"
+        content="MP Web Studio – izrada web sajtova Novi Sad. Moderni, brzi i profesionalni sajtovi za lokalne biznise, preduzetnike i ugostitelje. Jasne cene, SEO optimizacija i realni rokovi.">
+  <meta name="keywords"
+        content="izrada web sajtova novi sad, izrada sajtova novi sad, pravljenje sajta novi sad, web dizajn novi sad, mp web studio, cena izrade sajta novi sad">
 
   <meta name="robots" content="index, follow">
-
   <link rel="canonical" href="https://mpwebstudio.rs/izrada-web-sajtova-novi-sad.html">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #050509;
+      --bg-card: #0b0b14;
+      --accent: #4f8cff;
+      --accent-soft: rgba(79, 140, 255, 0.32);
+      --text-main: #f5f5f7;
+      --text-muted: #a3a3b5;
+      --border-soft: rgba(255, 255, 255, 0.12);
+      --radius-xl: 24px;
+      --shadow-soft: 0 22px 60px rgba(0,0,0,0.8);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #151522 0, #050509 45%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .bg-glow {
+      position: fixed;
+      inset: -200px;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(79, 140, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 10%, rgba(255, 90, 160, 0.12), transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(79, 140, 255, 0.12), transparent 60%);
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 26px 16px 60px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #a9c3ff;
+    }
+
+    header {
+      padding: 26px 16px 34px;
+      text-align: center;
+    }
+
+    .badge-city {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      background: rgba(5,5,14,0.8);
+    }
+
+    h1 {
+      font-size: clamp(30px, 4.4vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #ffffff, #c4d6ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 18px;
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    .hero-cta-row {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn-primary, .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f8cff, #88a9ff);
+      color: #050509;
+      box-shadow: 0 18px 40px rgba(79, 140, 255, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 55px rgba(79, 140, 255, 0.6);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(79, 140, 255, 0.16);
+      border-color: var(--accent-soft);
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    .section-card {
+      background: rgba(9,10,20,0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(79,140,255,0.26);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 20px 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      font-size: 14px;
+      color: var(--text-main);
+      padding-left: 20px;
+      margin: 8px 0 10px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .pill-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-list li {
+      margin-bottom: 0;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 5px 11px;
+      font-size: 12px;
+      background: rgba(5,5,14,0.9);
+      color: var(--text-muted);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .pricing-card {
+      background: rgba(8,9,18,0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(79,140,255,0.26);
+      padding: 18px 18px 16px;
+    }
+
+    .pricing-card.highlight {
+      border-color: rgba(79,140,255,0.6);
+      box-shadow: 0 22px 55px rgba(79,140,255,0.35);
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .portfolio-item {
+      background: rgba(8,9,18,0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(79,140,255,0.22);
+      padding: 16px 16px 14px;
+    }
+
+    .faq-item {
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 10px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 10px 10px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(79,140,255,0.22);
+      background: rgba(4,5,12,0.9);
+      backdrop-filter: blur(16px);
+    }
+
+    @media (max-width: 900px) {
+      .two-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header { padding-top: 20px; }
+      section { margin-bottom: 46px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="bg-glow"></div>
 
-<header style="padding: 40px 20px; text-align: center;">
-  <h1>Izrada Web Sajtova Novi Sad</h1>
-  <p style="font-size: 1.2rem;">Profesionalni web dizajn i izrada modernih sajtova za firme i preduzetnike u Novom Sadu</p>
-</header>
+  <div class="page">
 
-<section style="max-width: 900px; margin: auto; padding: 20px;">
-  <h2>Zašto vam treba profesionalan web sajt?</h2>
-  <p>
-    U današnjem digitalnom svetu, prvi utisak vašeg biznisa dešava se online.  
-    Profesionalan web sajt donosi poverenje, kredibilitet i povećava broj klijenata.  
-    MP Web Studio iz Novog Sada kreira moderne, brze i mobilno optimizovane sajtove koji pretvaraju posetioce u kupce.
-  </p>
+    <header>
+      <span class="badge-city">📍 Izrada web sajtova – Novi Sad &amp; okolina</span>
+      <h1><span>Izrada web sajtova Novi Sad</span> za biznise kojima je stalo kako izgledaju online</h1>
+      <p class="hero-subtitle">
+        MP Web Studio je mali, fokusirani studio iz Novog Sada. Pravimo moderne, brze i jasne sajtove
+        za lokale, servise, agencije i preduzetnike koji žele da deluju ozbiljno čim klijent otvori stranicu.
+      </p>
+      <p class="hero-note">
+        Ovo nije generički “šablon sajt” – već prilagođen dizajn, realni rokovi i podrška i nakon izrade.
+      </p>
 
-  <h2>Izrada web sajtova u Novom Sadu – naš pristup</h2>
-  <p>
-    Specijalizovani smo za izradu web sajtova za lokalne biznise.  
-    Bilo da ste ugostitelj, automehaničar, stanodavac, preduzetnik ili kompanija – vaš sajt će biti urađen pažljivo, profesionalno i maksimalno prilagođen vašim potrebama.
-  </p>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="https://wa.me/38163582132" target="_blank" rel="noopener">
+          Pošaljite poruku na WhatsApp
+        </a>
+        <a class="btn-ghost" href="mailto:mpucar1980@gmail.com">
+          Pošaljite email sa upitom
+        </a>
+        <a class="btn-ghost" href="index.html">
+          ← Nazad na glavnu stranicu MP Web Studio
+        </a>
+      </div>
+    </header>
 
-  <ul>
-    <li>✔ Brzi i moderni sajtovi</li>
-    <li>✔ SEO optimizacija za Google</li>
-    <li>✔ Integracija Google Maps lokacije</li>
-    <li>✔ Kontakt forme i CTA dugmad</li>
-    <li>✔ Mobilna optimizacija (responsive)</li>
-    <li>✔ Povoljne cene za preduzetnike</li>
-  </ul>
+    <!-- ZA KOGA JE OVA STRANICA -->
+    <section>
+      <div class="section-card two-cols">
+        <div>
+          <h2>Za koga je izrada sajta u Novom Sadu koje radi MP Web Studio?</h2>
+          <p>
+            Najčešće radimo sa vlasnicima malih i srednjih biznisa koji žele normalnu, ljudsku saradnju –
+            bez komplikacija, agencijskih termina i nepotrebnih troškova.
+          </p>
+          <p>
+            Ako ste vlasnik <strong>automehaničarske radionice, igraonice, restorana, kafića, servisa,
+            agencije, salona, građevinske firme, profesionalnog upravnika</strong> ili izdajete apartmane –
+            ova stranica je pisana baš za vas.
+          </p>
+          <p>
+            Vaš sajt treba da:
+          </p>
+          <ul>
+            <li>prikaže ko ste i šta nudite u prvih 5 sekundi;</li>
+            <li>da klijentu odmah da kontakt, lokaciju i jasnu ponudu;</li>
+            <li>deluje ozbiljno i uredno – bez “šarenila” i konfuzije;</li>
+            <li>bude brz i prilagođen mobilnim telefonima.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tipični klijenti sa kojima radimo</h3>
+          <ul class="pill-list">
+            <li><span class="pill">Autoservisi i vulkanizeri</span></li>
+            <li><span class="pill">Ugostitelji (restorani, kafane, kafići)</span></li>
+            <li><span class="pill">Profesionalni upravnici i agencije</span></li>
+            <li><span class="pill">Mali hoteli, apartmani i izdavanje stanova</span></li>
+            <li><span class="pill">Servisi, radionice i zanatlije</span></li>
+            <li><span class="pill">Lokalne firme i preduzetnici</span></li>
+          </ul>
+          <p>
+            Ako se pronalazite u ovom opisu, vrlo je verovatno da vam možemo napraviti sajt
+            koji izgleda ozbiljnije od većine vaše konkurencije u Novom Sadu.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <h2>Koliko košta izrada sajta u Novom Sadu?</h2>
-  <p>
-    Cena izrade sajta zavisi od veličine projekta, ali za većinu manjih lokalnih biznisa cena se kreće u rasponu od <strong>120 do 300 EUR</strong>.  
-    Za tačnu ponudu, kontaktirajte nas direktno.
-  </p>
+    <!-- PROCES -->
+    <section>
+      <div class="section-card">
+        <h2>Kako izgleda proces izrade web sajta kod nas?</h2>
+        <p>
+          Ne očekujemo od vas da znate “šta sve treba za sajt”. Na nama je da vodimo proces
+          i prevedemo vaše ideje u jasan, funkcionalan i lep sajt.
+        </p>
 
-  <h2>Zašto baš MP Web Studio?</h2>
-  <p>
-    Mi smo lokalni web studio iz Novog Sada – radimo brzo, pošteno i isporučujemo ono što obećamo.  
-    Svi naši sajtovi su SEO optimizovani i spremni za rangiranje na Google-u.
-  </p>
+        <ol>
+          <li><strong>Kratak razgovor (telefon, WhatsApp ili email).</strong><br>
+            Ukratko nam kažete čime se bavite, da li već imate sajt, koji su vam ciljevi
+            (više poziva, ozbiljniji nastup, informisanje stanara, rezervacije...).
+          </li>
+          <li><strong>Predlog strukture sajta.</strong><br>
+            Predlažemo broj stranica (Početna, O nama, Usluge, Galerija, Kontakt…),
+            raspored sadržaja i osnovnu navigaciju.
+          </li>
+          <li><strong>Priprema tekstova i materijala.</strong><br>
+            Ako već imate tekstove – prilagođavamo ih za web. Ako nemate, mi pišemo
+            osnovni sadržaj na osnovu informacija koje dobijemo od vas.
+          </li>
+          <li><strong>Dizajn i izrada sajta.</strong><br>
+            Radimo u modernom, tamnom ili svetlom stilu (po dogovoru), uz fokus na čitljivost
+            i jasnoću. Sajt je responsive – prilagođen mobilnim telefonima i tabletima.
+          </li>
+          <li><strong>SEO osnova i tehnička podešavanja.</strong><br>
+            Podešavamo osnovni SEO (naslovi, opisi, URL struktura), povezujemo sa Google Mapama
+            i, po potrebi, sa Google Business profilom.
+          </li>
+          <li><strong>Finalne izmene i puštanje sajta.</strong><br>
+            Nakon što pregledate sajt, prolazimo kroz sve zajedno, unosimo korekcije i
+            tek kada ste zadovoljni – sajt ide “uživo”.
+          </li>
+        </ol>
 
-  <ul>
-    <li>👉 Lokalna podrška iz Novog Sada</li>
-    <li>👉 Brza izrada (3–7 dana)</li>
-    <li>👉 SEO uključeno u cenu</li>
-    <li>👉 Dizajn po meri vašeg brenda</li>
-  </ul>
+        <p>
+          Nakon puštanja sajta niste prepušteni sami sebi – po dogovoru radimo manje izmene,
+          dodavanje slika, novih sekcija i slično.
+        </p>
+      </div>
+    </section>
 
-  <h2>Radimo sa klijentima iz cele Srbije, ali posebno iz Novog Sada</h2>
-  <p>
-    Posvetili smo posebnu pažnju lokalnim biznisima, jer verujemo da kvalitetan web sajt može znatno da poveća vidljivost i prodaju.  
-    Zahvaljujući brzom radu i profesionalnom pristupu, već sarađujemo sa više novosadskih firmi u različitim industrijama.
-  </p>
+    <!-- CENE / PAKETI -->
+    <section>
+      <div class="section-card">
+        <h2>Cena izrade sajta u Novom Sadu</h2>
+        <p>
+          Cene su orijentacione i služe da imate realnu sliku. Ne verujemo u “5 stranica – 50 €”
+          ponude koje posle prerastu u nešto sasvim drugo. Kod nas uvek unapred znate okvir.
+        </p>
 
-  <h2>Kontakt</h2>
-  <p>
-    Ako želite moderan, profesionalan i optimizovan sajt – kontaktirajte nas:
-  </p>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="tag">Za početnike i jednostavne prezentacije</div>
+            <h3>START paket – landing stranica</h3>
+            <div class="price">od 120 €</div>
+            <p>
+              Jednostavna, ali ozbiljna prezentacija vašeg biznisa na jednoj stranici –
+              idealno za servise, male lokale i uslužne delatnosti.
+            </p>
+            <ul>
+              <li>1 landing stranica sa sekcijama (O nama, Usluge, Lokacija, Kontakt)</li>
+              <li>Kontakt forma ili jasno istaknut telefon / Viber / WhatsApp</li>
+              <li>Integrisana Google mapa</li>
+              <li>Osnovna SEO struktura</li>
+            </ul>
+          </div>
 
-  <p><strong>Email:</strong> mpucar1980@gmail.com<br>
-     <strong>Telefon:</strong> +381 63 582 132 (Viber / WhatsApp)</p>
+          <div class="pricing-card highlight">
+            <div class="tag">Najčešći izbor</div>
+            <h3>BIZNIS paket – sajt od 3–5 stranica</h3>
+            <div class="price">od 180–260 €</div>
+            <p>
+              Za firme i preduzetnike kojima treba detaljniji prikaz usluga, referenci
+              i kontakta – sajt koji ostavlja utisak ozbiljnog poslovanja.
+            </p>
+            <ul>
+              <li>Početna + O nama + Usluge + Galerija / Reference + Kontakt</li>
+              <li>SEO optimizovan sadržaj (naslovi, opisi, ključne reči)</li>
+              <li>Povezivanje sa Google Business profilom</li>
+              <li>Osnovna analitika poseta (Google Analytics ili alternativno rešenje)</li>
+            </ul>
+          </div>
 
-  <a href="mailto:mpucar1980@gmail.com" 
-     style="display:inline-block; padding:12px 24px; background:#000; color:#fff; text-decoration:none; border-radius:8px; margin-top:20px;">
-     Pošalji upit
-  </a>
-</section>
+          <div class="pricing-card">
+            <div class="tag">Za one koji žele više</div>
+            <h3>PRO paket – prošireni sajt</h3>
+            <div class="price">od 260 € naviše</div>
+            <p>
+              Za biznise kojima je sajt glavno mesto informisanja klijenata – više stranica,
+              blog/novosti, detaljnije SEO i dugoročna saradnja.
+            </p>
+            <ul>
+              <li>5+ stranica (posebne stranice za usluge, blog, FAQ…)</li>
+              <li>Pomoć oko strategije sadržaja i strukture menija</li>
+              <li>Dodatne SEO preporuke i savetovanje</li>
+              <li>Mogućnost dogovora oko održavanja</li>
+            </ul>
+          </div>
+        </div>
 
-<footer style="text-align:center; padding: 40px 0; font-size: 0.9rem; opacity: 0.7;">
-  © 2025 MP Web Studio – Novi Sad. Sva prava zadržana.
-</footer>
+        <p style="margin-top: 10px;">
+          Za tačnu cenu najbolje je da nam pošaljete kratku poruku o vašem biznisu,
+          pa ćemo odgovoriti sa konkretnim predlogom i okvirnim rokom izrade.
+        </p>
+      </div>
+    </section>
 
+    <!-- PORTFOLIO / CASE STUDIES -->
+    <section>
+      <div class="section-card">
+        <h2>Primeri sajtova koje smo radili za klijente iz Novog Sada</h2>
+        <p>
+          Svaki sajt pravimo tako da liči na biznis koji predstavlja. Neki žele toplu,
+          “drvenu” atmosferu, drugi potpuno tamnu i ozbiljnu, treći porodičnu i razigranu.
+        </p>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <h3>Autoservis 3NS – Veternik</h3>
+            <p>
+              Sajt za lokalni autoservis koji jasno prikazuje usluge, lokaciju i kontakt.
+              Fokus je na brzom pristupu informacijama – bez suvišnih elemenata.
+            </p>
+            <p>
+              <strong>Tip sajta:</strong> servis / usluge<br>
+              <strong>Link:</strong> <a href="https://autoservis3ns.neocities.org/" target="_blank" rel="noopener">
+                autoservis3ns.neocities.org
+              </a>
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <h3>Konoba Orkus – Novi Sad</h3>
+            <p>
+              Topao, “drveni” dizajn sa fokusom na atmosferu tamburaša, hrane i vina.
+              Stranica sa menijem, slikama i jasnim informacijama o rezervacijama.
+            </p>
+            <p>
+              <strong>Tip sajta:</strong> restoran / ugostiteljstvo<br>
+              <strong>Link:</strong> <a href="https://konobaorkus.neocities.org/" target="_blank" rel="noopener">
+                konobaorkus.neocities.org
+              </a>
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <h3>Moj Stan NS – profesionalni upravnik</h3>
+            <p>
+              Ozbiljan, uredan sajt za profesionalnog upravnika zgrada sa naglaskom
+              na poverenje, transparentnost i zakonsku usklađenost.
+            </p>
+            <p>
+              <strong>Tip sajta:</strong> profesionalni upravnik / usluge<br>
+              <strong>Link:</strong> <a href="https://mojstanns.neocities.org/" target="_blank" rel="noopener">
+                mojstanns.neocities.org
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top: 10px;">
+          Više primera možete videti i na našoj glavnoj stranici
+          <a href="index.html">MP Web Studio – portfolio</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- LOKALNI FOKUS -->
+    <section>
+      <div class="section-card">
+        <h2>Lokalni fokus – izrada sajtova za Novi Sad i okolina</h2>
+        <p>
+          Iako možemo da radimo sa klijentima iz cele Srbije, <strong>posebno volimo da radimo sa
+          novosadskim biznisima</strong>. Lakše je razumeti lokalne prilike, navike ljudi i način
+          poslovanja kada delimo isti grad.
+        </p>
+        <p>
+          Bilo da ste na Limanu, Detelinari, Grbavici, Podbari, Telepu, u Veterniku ili Novom
+          Sadu centru – možemo da napravimo sajt koji će vašem klijentu u par sekundi reći:
+          “Ovo je ozbiljna firma, ovde mogu da se javim”.
+        </p>
+        <p>
+          Naš cilj nije da imate samo “još jedan sajt”, već digitalni izlog koji vam zaista
+          pomaže u poslu – bilo da je to više poziva, bolji utisak ili lakše informisanje klijenata.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="section-card">
+        <h2>Česta pitanja – izrada web sajtova Novi Sad</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">Koliko traje izrada sajta?</div>
+          <div class="faq-a">
+            Za jednostavnije sajtove (START paket) rok je obično 3–7 radnih dana od trenutka
+            kada dobijemo sve informacije. Kod većih projekata i PRO paketa rok dogovaramo
+            individualno, ali uvek unapred.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Da li moram sam da pišem tekst za sajt?</div>
+          <div class="faq-a">
+            Ne morate. Dovoljno je da nam u poruci napišete čime se bavite, koje usluge nudite
+            i šta vam je važno da se istakne. Na osnovu toga mi pripremamo tekstove prilagođene
+            web formatu i SEO-u, a vi ih samo odobrite ili korigujete.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Radite li optimizaciju za Google (SEO)?</div>
+          <div class="faq-a">
+            Da, svaki sajt koji radimo ima osnovnu SEO strukturu: naslove, opise, logičnu
+            hijerarhiju stranica, optimizovane URL-ove i osnovne interne linkove. Za detaljniji
+            SEO (blog, sadržaj, linkovi) možemo da damo smernice ili da radimo dodatno po dogovoru.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Da li mogu kasnije da menjam tekstove i slike?</div>
+          <div class="faq-a">
+            Naravno. Uvek možemo da uradimo manje izmene (tekst, slike, novi kontakt, dodatna
+            usluga). Ako želite češće izmene ili blog, možemo dogovoriti i periodično održavanje.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Da li možete da mi pomognete i oko Google mapa i Google Business profila?</div>
+          <div class="faq-a">
+            Da. Pomažemo kod postavljanja ili ažuriranja Google Business profila i pravilnog
+            povezivanja sa sajtom, što je posebno važno za lokalne pretrage tipa
+            “autoservis novi sad”, “konoba novi sad” i slično.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Da li radite samo sa firmama iz Novog Sada?</div>
+          <div class="faq-a">
+            Ne, radimo sa klijentima iz cele Srbije, ali nam je Novi Sad prirodna baza.
+            Prednost za lokalne klijente je što, po potrebi, možemo da se čujemo i uživo
+            ili obiđemo lokal kako bismo bolje razumeli atmosferu koju sajt treba da prenese.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Da li je domen i hosting uračunat u cenu?</div>
+          <div class="faq-a">
+            Domen i hosting se najčešće plaćaju posebno (preko provajdera koje vi odaberete),
+            ali vam možemo pomoći oko izbora i kupovine. U nekim slučajevima možemo ponuditi
+            i povoljnije varijante hostinga ili statičkog hostinga, u zavisnosti od toga šta vam treba.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Šta je sledeći korak ako želim da sarađujemo?</div>
+          <div class="faq-a">
+            Najlakše je da nam pošaljete kratku poruku na WhatsApp, Viber ili email sa nekoliko
+            rečenica o vašem biznisu. U roku od kratkog vremena javljamo se sa konkretnim predlogom,
+            okvirnom cenom i rokom izrade.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT CTA -->
+    <section>
+      <div class="section-card">
+        <h2>Spremni da vaš biznis u Novom Sadu dobije ozbiljan web sajt?</h2>
+        <p>
+          Ako vam treba sajt koji izgleda profesionalno, radi brzo i jasno komunicira sa vašim
+          klijentima – tu smo da to odradimo korektno, bez komplikovanja i skrivenih troškova.
+        </p>
+
+        <p><strong>Kontakt:</strong><br>
+          Email: <a href="mailto:mpucar1980@gmail.com">mpucar1980@gmail.com</a><br>
+          Telefon / Viber / WhatsApp: <a href="tel:+38163582132">+381 63 582 132</a>
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="https://wa.me/38163582132" target="_blank" rel="noopener">
+            Pošaljite poruku na WhatsApp
+          </a>
+          <a class="btn-ghost" href="mailto:mpucar1980@gmail.com">
+            Pošaljite email sa opisom biznisa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 MP Web Studio – Izrada web sajtova Novi Sad • mpwebstudio.rs
+    </footer>
+  </div>
+
+  <!-- LocalBusiness + FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MP Web Studio",
+    "image": "https://mpwebstudio.rs/img/og-image.png",
+    "@id": "https://mpwebstudio.rs/",
+    "url": "https://mpwebstudio.rs/",
+    "telephone": "+38163582132",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Novi Sad",
+      "addressRegion": "Vojvodina",
+      "addressCountry": "RS"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Novi Sad"
+    },
+    "description": "MP Web Studio – izrada web sajtova Novi Sad. Moderni, brzi i profesionalni sajtovi za lokalne biznise, preduzetnike i ugostitelje.",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Koliko traje izrada sajta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Za jednostavnije sajtove (START paket) rok je obično 3–7 radnih dana od trenutka kada dobijemo sve informacije. Kod većih projekata i PRO paketa rok dogovaramo individualno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li moram sam da pišem tekst za sajt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ne morate. Dovoljno je da nam napišete čime se bavite, koje usluge nudite i šta vam je važno da se istakne. Na osnovu toga mi pripremamo tekstove prilagođene web formatu i SEO-u."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Radite li optimizaciju za Google (SEO)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, svaki sajt koji radimo ima osnovnu SEO strukturu: naslove, opise, logičnu hijerarhiju stranica, optimizovane URL-ove i osnovne interne linkove. Za napredniji SEO možemo raditi dodatno, po dogovoru."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li mogu kasnije da menjam tekstove i slike?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Naravno. Uvek možemo da uradimo manje izmene (tekst, slike, novi kontakt, dodatna usluga). Ako želite češće izmene ili blog, možemo dogovoriti i periodično održavanje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li možete da mi pomognete i oko Google mapa i Google Business profila?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da. Pomažemo kod postavljanja ili ažuriranja Google Business profila i pravilnog povezivanja sa sajtom, što je važno za lokalne pretrage tipa \u201cautoservis novi sad\u201d ili \u201crestoran novi sad\u201d."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li radite samo sa firmama iz Novog Sada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ne, radimo sa klijentima iz cele Srbije, ali nam je Novi Sad prirodna baza. Prednost za lokalne klijente je mogućnost bliže saradnje i boljeg razumevanja lokalnog tržišta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Da li je domen i hosting uračunat u cenu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Domen i hosting se najčešće plaćaju posebno (preko provajdera koje vi odaberete), ali možemo pomoći oko izbora i kupovine, kao i ponuditi povoljnije varijante u zavisnosti od potreba."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Šta je sledeći korak ako želim da sarađujemo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Najlakše je da nam pošaljete kratku poruku na WhatsApp, Viber ili email sa nekoliko rečenica o vašem biznisu. Uskoro se javljamo sa konkretnim predlogom, okvirnom cenom i rokom izrade."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
