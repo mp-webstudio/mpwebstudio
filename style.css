@@ -12,7 +12,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background: #0d111c;
   font-family: 'Inter', sans-serif;
@@ -167,13 +166,13 @@ img, video {
 /* HERO */
 /* ----------------------------------------------------- */
 .hero {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .hero-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 25px 32px;
+  padding: 18px 24px;
   border-radius: 28px;
   background: rgba(17,23,38,0.55);
   box-shadow:
@@ -202,7 +201,7 @@ img, video {
 }
 
 .video-frame {
-  width: 65%;
+  width: 50%;
   margin: 0 auto;
   border-radius: 18px;
   overflow: hidden;
