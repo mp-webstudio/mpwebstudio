@@ -58,7 +58,7 @@
 </section>
 
 
-<!-- CONTACT + MAP -->
+<!-- CONTACT + MAP WITHOUT FORM -->
 <section class="page-section">
   <div class="container" style="display:flex; flex-wrap:wrap; gap:40px; justify-content:center;">
 
@@ -86,7 +86,13 @@
       <h3 style="font-size:22px; margin-top:25px; margin-bottom:10px;">Lokacija</h3>
       <p style="color:#b9c8ff;">Novi Sad — Bistrica</p>
 
-      <div class="map-box" style="margin-top:20px;">
+    </div>
+
+
+    <!-- MAP ONLY -->
+    <div class="hero-wrapper" style="max-width:420px; flex:1;">
+
+      <div class="map-box">
 
         <!-- MAPA – TAČNA LOKACIJA -->
         <iframe
@@ -100,29 +106,6 @@
         </iframe>
 
       </div>
-
-    </div>
-
-
-    <!-- CONTACT FORM -->
-    <div class="hero-wrapper" style="max-width:420px; flex:1;">
-
-      <h2 style="font-size:26px; margin-bottom:15px;">Pošaljite nam poruku</h2>
-
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="Vaše ime" required>
-        <br><br>
-
-        <input type="text" name="phone" placeholder="Vaš broj telefona">
-        <br><br>
-
-        <input type="email" name="email" placeholder="Vaša email adresa" required>
-        <br><br>
-
-        <textarea name="message" placeholder="Vaša poruka..." required></textarea>
-
-        <button class="form-button" type="submit">Pošalji poruku</button>
-      </form>
 
     </div>
 
