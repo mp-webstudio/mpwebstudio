@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>O nama – MP Web Studio | Izrada Web Sajtova Novi Sad</title>
+  <meta name="description" content="MP Web Studio – studio specijalizovan za izradu modernih, brzih i profesionalnih web sajtova. Fokus na lokalne biznise u Novom Sadu. SEO, dizajn, razvoj.">
+  <meta property="og:image" content="img/og-image.png">
+  <link rel="icon" type="image/png" href="img/favicon-64.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== -->
+<!-- HEADER -->
+<!-- ===================== -->
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="img/favicon-64.png" alt="MP Web Studio">
+      <span>MP WEB STUDIO</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Početna</a>
+      <a href="o-nama.html" class="active">O nama</a>
+      <a href="usluge.html">Usluge</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="faq.html">FAQ</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Početna</a>
+  <a href="o-nama.html">O nama</a>
+  <a href="usluge.html">Usluge</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="faq.html">FAQ</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- ===================== -->
+<!-- O NAMA CONTENT -->
+<!-- ===================== -->
+
+<section class="page-section">
+  <div class="container">
+
+    <h1 class="page-title">O nama</h1>
+    <p class="page-subtitle">
+      Profesionalni studio iz Novog Sada specijalizovan za izradu modernih, brzih i ozbiljnih web sajtova.
+      Fokusirani smo na rezultate, lokalni SEO i vrhunski dizajn.
+    </p>
+
+    <div class="hero-wrapper" style="margin-top:40px;">
+
+      <h2 style="font-size:28px; margin-bottom:14px; text-align:center;">
+        Ko smo mi?
+      </h2>
+
+      <p style="color:#b9c8ff; text-align:center; max-width:800px; margin:0 auto 25px;">
+        MP Web Studio je mali, efikasan i posvećen tim iz Novog Sada. Naš cilj je da svakoj firmi, bez obzira na
+        veličinu, pružimo profesionalni web identitet koji uliva poverenje i donosi rezultate.
+      </p>
+
+      <p style="color:#b9c8ff; text-align:center; max-width:800px; margin:0 auto 25px;">
+        Radimo minimalističke, prečišćene i premium sajtove, sa fokusom na lokalne biznise iz Novog Sada
+        — jer najbolje poznajemo naše tržište, našu publiku i kako se rangirati na Google-u u lokalnim rezultatima.
+      </p>
+
+      <h3 style="font-size:24px; margin-top:30px; margin-bottom:14px; text-align:center;">
+        Naša misija
+      </h3>
+
+      <p style="color:#b9c8ff; text-align:center; max-width:800px; margin:0 auto;">
+        Da vaš biznis predstavimo jasno, profesionalno i brzo — tako da posetioci odmah razumeju šta nudite,
+        zašto ste bolji od konkurencije i kako da vas kontaktiraju.  
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== -->
+<!-- FOOTER -->
+<!-- ===================== -->
+<footer class="footer">
+  <div class="container footer-wrapper">
+
+    <div class="footer-col">
+      <h3>MP Web Studio</h3>
+      <p>Izrada profesionalnih web sajtova • Novi Sad</p>
+    </div>
+
+    <div class="footer-col">
+  <h4>Kontakt</h4>
+  <p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
+  <p>WhatsApp / Viber: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
+  <p>Email: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></p>
+</div>
+
+    <div class="footer-col">
+      <a href="kontakt.html" class="footer-cta">Pošaljite poruku</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 MP Web Studio — Sva prava zadržana
+  </div>
+</footer>
+
+
+<!-- ===================== -->
+<!-- SCRIPT (hamburger) -->
+<!-- ===================== -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
