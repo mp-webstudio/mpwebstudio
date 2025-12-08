@@ -12,7 +12,9 @@
         content="izrada web sajtova novi sad, izrada sajtova novi sad, pravljenje sajta novi sad, web dizajn novi sad, mp web studio, cena izrade sajta novi sad">
 
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://mpwebstudio.rs/izrada-web-sajtova-novi-sad.html">
+
+  <!-- ❗ ISPRAVLJENO: canonical sada pokazuje na GLAVNU stranicu -->
+  <link rel="canonical" href="https://mpwebstudio.rs/">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -30,11 +32,7 @@
       --shadow-soft: 0 22px 60px rgba(0,0,0,0.8);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -61,14 +59,8 @@
       padding: 26px 16px 60px;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #a9c3ff;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: #a9c3ff; }
 
     header {
       padding: 26px 16px 34px;
@@ -159,9 +151,7 @@
       border-color: var(--accent-soft);
     }
 
-    section {
-      margin-bottom: 60px;
-    }
+    section { margin-bottom: 60px; }
 
     .section-card {
       background: rgba(9,10,20,0.96);
@@ -195,9 +185,7 @@
       margin: 8px 0 10px;
     }
 
-    li {
-      margin-bottom: 6px;
-    }
+    li { margin-bottom: 6px; }
 
     .two-cols {
       display: grid;
@@ -212,18 +200,7 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .pill-list li {
-      margin-bottom: 0;
-    }
-
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 5px 11px;
-      font-size: 12px;
-      background: rgba(5,5,14,0.9);
-      color: var(--text-muted);
-    }
+    .pill { border-radius: 999px; border: 1px solid var(--border-soft); padding: 5px 11px; font-size: 12px; background: rgba(5,5,14,0.9); color: var(--text-muted); }
 
     .pricing-grid {
       display: grid;
@@ -251,43 +228,11 @@
       margin-bottom: 6px;
     }
 
-    .tag {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
       margin-top: 12px;
-    }
-
-    .portfolio-item {
-      background: rgba(8,9,18,0.96);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(79,140,255,0.22);
-      padding: 16px 16px 14px;
-    }
-
-    .faq-item {
-      margin-bottom: 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding-bottom: 10px;
-    }
-
-    .faq-q {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .faq-a {
-      font-size: 13px;
-      color: var(--text-muted);
     }
 
     footer {
@@ -302,9 +247,7 @@
     }
 
     @media (max-width: 900px) {
-      .two-cols {
-        grid-template-columns: 1fr;
-      }
+      .two-cols { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -342,7 +285,6 @@
         </a>
       </div>
     </header>
-
     <!-- ZA KOGA JE OVA STRANICA -->
     <section>
       <div class="section-card two-cols">
@@ -574,7 +516,6 @@
         </p>
       </div>
     </section>
-
     <!-- FAQ -->
     <section>
       <div class="section-card">
@@ -683,31 +624,20 @@
     </footer>
   </div>
 
-  <!-- LocalBusiness + FAQ schema -->
+  <!-- ✅ ISPRAVLJENO: LocalBusiness uklonjen!
+       ❗ Dodata WebPage schema (pravilno za landing page) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "MP Web Studio",
-    "image": "https://mpwebstudio.rs/img/og-image.png",
-    "@id": "https://mpwebstudio.rs/",
-    "url": "https://mpwebstudio.rs/",
-    "telephone": "+38163582132",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Novi Sad",
-      "addressRegion": "Vojvodina",
-      "addressCountry": "RS"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Novi Sad"
-    },
-    "description": "MP Web Studio – izrada web sajtova Novi Sad. Moderni, brzi i profesionalni sajtovi za lokalne biznise, preduzetnike i ugostitelje.",
-    "sameAs": []
+    "@type": "WebPage",
+    "name": "Izrada web sajtova Novi Sad",
+    "url": "https://mpwebstudio.rs/izrada-web-sajtova-novi-sad.html",
+    "description": "SEO landing stranica za izradu web sajtova u Novom Sadu. Moderni, brzi i profesionalni sajtovi za lokalne biznise.",
+    "inLanguage": "sr-RS"
   }
   </script>
 
+  <!-- FAQ schema ostaje (Google voli ovo!) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -718,7 +648,7 @@
         "name": "Koliko traje izrada sajta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Za jednostavnije sajtove (START paket) rok je obično 3–7 radnih dana od trenutka kada dobijemo sve informacije. Kod većih projekata i PRO paketa rok dogovaramo individualno."
+          "text": "Za jednostavnije sajtove rok je obično 3–7 radnih dana, a veći projekti se dogovaraju individualno."
         }
       },
       {
@@ -726,60 +656,28 @@
         "name": "Da li moram sam da pišem tekst za sajt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ne morate. Dovoljno je da nam napišete čime se bavite, koje usluge nudite i šta vam je važno da se istakne. Na osnovu toga mi pripremamo tekstove prilagođene web formatu i SEO-u."
+          "text": "Ne morate. Dovoljno je da nam ukratko opišete čime se bavite, a mi pripremamo tekstove prilagođene SEO-u i web formatu."
         }
       },
       {
         "@type": "Question",
-        "name": "Radite li optimizaciju za Google (SEO)?",
+        "name": "Radite li SEO optimizaciju?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Da, svaki sajt koji radimo ima osnovnu SEO strukturu: naslove, opise, logičnu hijerarhiju stranica, optimizovane URL-ove i osnovne interne linkove. Za napredniji SEO možemo raditi dodatno, po dogovoru."
+          "text": "Da, svaki sajt ima osnovnu SEO strukturu. Za napredniji SEO možemo raditi posebno po dogovoru."
         }
       },
       {
         "@type": "Question",
-        "name": "Da li mogu kasnije da menjam tekstove i slike?",
+        "name": "Da li mogu kasnije da menjam slike i tekst?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Naravno. Uvek možemo da uradimo manje izmene (tekst, slike, novi kontakt, dodatna usluga). Ako želite češće izmene ili blog, možemo dogovoriti i periodično održavanje."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Da li možete da mi pomognete i oko Google mapa i Google Business profila?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Da. Pomažemo kod postavljanja ili ažuriranja Google Business profila i pravilnog povezivanja sa sajtom, što je važno za lokalne pretrage tipa \u201cautoservis novi sad\u201d ili \u201crestoran novi sad\u201d."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Da li radite samo sa firmama iz Novog Sada?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ne, radimo sa klijentima iz cele Srbije, ali nam je Novi Sad prirodna baza. Prednost za lokalne klijente je mogućnost bliže saradnje i boljeg razumevanja lokalnog tržišta."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Da li je domen i hosting uračunat u cenu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Domen i hosting se najčešće plaćaju posebno (preko provajdera koje vi odaberete), ali možemo pomoći oko izbora i kupovine, kao i ponuditi povoljnije varijante u zavisnosti od potreba."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Šta je sledeći korak ako želim da sarađujemo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Najlakše je da nam pošaljete kratku poruku na WhatsApp, Viber ili email sa nekoliko rečenica o vašem biznisu. Uskoro se javljamo sa konkretnim predlogom, okvirnom cenom i rokom izrade."
+          "text": "Naravno. Radimo manje izmene po potrebi, a možemo i dugoročno održavanje."
         }
       }
     ]
   }
   </script>
+
 </body>
 </html>
-
