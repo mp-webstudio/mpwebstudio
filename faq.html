@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FAQ | Česta pitanja | MP Web Studio – Izrada Web Sajtova Novi Sad</title>
+  <meta name="description"
+        content="Česta pitanja o izradi web sajtova, rokovima, SEO optimizaciji, održavanju i saradnji sa MP Web Studio iz Novog Sada.">
+
+  <link rel="icon" type="image/png" href="img/favicon-64.png">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lokalne stilizacije za FAQ accordion -->
+  <style>
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 0;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-icon {
+      font-size: 22px;
+      line-height: 1;
+      color: #4f8cff;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+      color: #b9c8ff;
+      margin-top: 6px;
+    }
+
+    .faq-answer-inner {
+      padding-right: 10px;
+      padding-bottom: 6px;
+    }
+
+    .faq-item.active .faq-answer {
+      /* kad je aktivan, JS mu postavlja max-height inline,
+         ova klasa služi više za semantiku ako želiš kasnije da dodaš stil */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="img/favicon-64.png" alt="MP Web Studio Logo">
+        <span>MP WEB STUDIO</span>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Početna</a>
+        <a href="o-nama.html">O nama</a>
+        <a href="usluge.html">Usluge</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Početna</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="usluge.html">Usluge</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="faq.html">FAQ</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-section">
+    <h1 class="page-title">Česta pitanja (FAQ)</h1>
+    <p class="page-subtitle">
+      Odgovori na najčešća pitanja koja dobijamo u vezi sa izradom web sajtova, rokovima, SEO-om i saradnjom.
+    </p>
+  </section>
+
+
+  <!-- FAQ ACCORDION -->
+  <section class="page-section">
+    <div class="container faq-container">
+
+      <div class="hero-wrapper" style="padding:30px; text-align:left;">
+
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Koliko traje izrada sajta?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Za jednostavnije sajtove (START paket) rok je obično 3–7 dana od trenutka kada dobijemo sve informacije.
+              Kod većih projekata rok dogovaramo individualno, ali uvek unapred.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Da li moram sam da pišem tekst za sajt?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Ne morate. Dovoljno je da nam napišete kratko čime se bavite, a mi pripremamo profesionalne tekstove
+              prilagođene web formatu i SEO-u.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Radite li optimizaciju za Google (SEO)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Da. Svaki sajt radimo sa osnovnim SEO-om — naslovi, opisi, struktura, ključne reči i interne veze.
+              Za napredniji SEO možemo raditi i dodatno, po dogovoru.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Da li mogu kasnije da menjam slike i tekst?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Naravno. Radimo manje izmene besplatno ili periodično održavanje — po dogovoru, u zavisnosti od obima.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Da li možete da pomognete oko Google mapa i Google Business profila?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Da — pomažemo i oko Google Business profila, verifikacije, lokacije i pravilnog povezivanja sa sajtom,
+              kao i oko prikaza na Google mapama.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Radite li samo sa firmama iz Novog Sada?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Ne — radimo i za klijente širom Srbije, ali nam je Novi Sad baza i poznajemo lokalno tržište najbolje,
+              što je prednost kod lokalnog SEO-a.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Da li su domen i hosting uračunati u cenu?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Domen i hosting se najčešće plaćaju posebno, ali pomažemo oko izbora i kupovine najpovoljnije
+              i najstabilnije opcije za vaš biznis.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Šta je sledeći korak ako želim saradnju?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Pošaljite kratku poruku na WhatsApp ili email o vašem biznisu — javljamo se sa predlogom strukture,
+              okvirnom cenom i rokovima u roku od 15 minuta (tokom radnog vremena).
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="page-section">
+    <div class="container" style="text-align:center; max-width:700px;">
+      <h2 style="color:#fff; margin-bottom:15px;">Niste našli odgovor koji tražite?</h2>
+      <p style="color:#b9c8ff; margin-bottom:30px;">
+        Pišite nam kratko pitanje ili ideju — odgovaramo brzo i konkretno.
+      </p>
+      <a href="kontakt.html" class="btn-primary" style="font-size:18px; padding:16px 36px;">
+        Kontaktirajte nas
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-wrapper">
+
+      <div class="footer-col">
+        <h3>MP Web Studio</h3>
+        <p>Izrada web sajtova • SEO • Branding</p>
+      </div>
+
+      <div class="footer-col">
+  <h4>Kontakt</h4>
+  <p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
+  <p>WhatsApp / Viber: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
+  <p>Email: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></p>
+</div>
+
+      <div class="footer-col">
+        <a href="kontakt.html" class="footer-cta">Zakažite konsultaciju</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 MP Web Studio – Sva prava zadržana.
+    </div>
+  </footer>
+
+
+  <!-- JS: hamburger + FAQ accordion -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // zatvori sve
+        faqItems.forEach(i => {
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-answer');
+          const ic = i.querySelector('.faq-icon');
+          a.style.maxHeight = null;
+          ic.textContent = '+';
+        });
+
+        // ako nije bio otvoren, otvori
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.textContent = '–';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
