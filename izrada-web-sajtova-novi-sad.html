@@ -13,7 +13,7 @@
 
   <meta name="robots" content="index, follow">
 
-  <!-- ❗ ISPRAVLJENO: canonical sada pokazuje na GLAVNU stranicu -->
+  <!-- canonical ostaje na glavnu stranicu -->
   <link rel="canonical" href="https://mpwebstudio.rs/">
 
   <!-- Font -->
@@ -65,6 +65,42 @@
     header {
       padding: 26px 16px 34px;
       text-align: center;
+    }
+
+    /* Novi okvir oko hero dela */
+    .header-inner {
+      background: rgba(9, 10, 20, 0.96);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(79, 140, 255, 0.26);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 24px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* Gornje malo dugme za povratak */
+    .back-home-top {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .back-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(5, 5, 12, 0.9);
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .back-link-pill:hover {
+      background: rgba(79, 140, 255, 0.16);
+      color: #ffffff;
     }
 
     .badge-city {
@@ -200,7 +236,14 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .pill { border-radius: 999px; border: 1px solid var(--border-soft); padding: 5px 11px; font-size: 12px; background: rgba(5,5,14,0.9); color: var(--text-muted); }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 5px 11px;
+      font-size: 12px;
+      background: rgba(5,5,14,0.9);
+      color: var(--text-muted);
+    }
 
     .pricing-grid {
       display: grid;
@@ -253,6 +296,8 @@
     @media (max-width: 600px) {
       header { padding-top: 20px; }
       section { margin-bottom: 46px; }
+      .header-inner { padding: 18px 14px 22px; }
+      .back-home-top { justify-content: center; }
     }
   </style>
 </head>
@@ -263,28 +308,37 @@
   <div class="page">
 
     <header>
-      <span class="badge-city">📍 Izrada web sajtova – Novi Sad &amp; okolina</span>
-      <h1><span>Izrada web sajtova Novi Sad</span> za biznise kojima je stalo kako izgledaju online</h1>
-      <p class="hero-subtitle">
-        MP Web Studio je mali, fokusirani studio iz Novog Sada. Pravimo moderne, brze i jasne sajtove
-        za lokale, servise, agencije i preduzetnike koji žele da deluju ozbiljno čim klijent otvori stranicu.
-      </p>
-      <p class="hero-note">
-        Ovo nije generički “šablon sajt” – već prilagođen dizajn, realni rokovi i podrška i nakon izrade.
-      </p>
+      <div class="header-inner">
+        <div class="back-home-top">
+          <a href="index.html" class="back-link-pill">
+            ← Nazad na glavnu stranicu MP Web Studio
+          </a>
+        </div>
 
-      <div class="hero-cta-row">
-        <a class="btn-primary" href="https://wa.me/38163582132" target="_blank" rel="noopener">
-          Pošaljite poruku na WhatsApp
-        </a>
-        <a class="btn-ghost" href="mailto:mpucar1980@gmail.com">
-          Pošaljite email sa upitom
-        </a>
-        <a class="btn-ghost" href="index.html">
-          ← Nazad na glavnu stranicu MP Web Studio
-        </a>
+        <span class="badge-city">📍 Izrada web sajtova – Novi Sad &amp; okolina</span>
+        <h1><span>Izrada web sajtova Novi Sad</span> za biznise kojima je stalo kako izgledaju online</h1>
+        <p class="hero-subtitle">
+          MP Web Studio je mali, fokusirani studio iz Novog Sada. Pravimo moderne, brze i jasne sajtove
+          za lokale, servise, agencije i preduzetnike koji žele da deluju ozbiljno čim klijent otvori stranicu.
+        </p>
+        <p class="hero-note">
+          Ovo nije generički “šablon sajt” – već prilagođen dizajn, realni rokovi i podrška i nakon izrade.
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="https://wa.me/38163582132" target="_blank" rel="noopener">
+            Pošaljite poruku na WhatsApp
+          </a>
+          <a class="btn-ghost" href="mailto:mpucar1980@gmail.com">
+            Pošaljite email sa upitom
+          </a>
+          <a class="btn-ghost" href="index.html">
+            ← Nazad na glavnu stranicu MP Web Studio
+          </a>
+        </div>
       </div>
     </header>
+
     <!-- ZA KOGA JE OVA STRANICA -->
     <section>
       <div class="section-card two-cols">
@@ -516,6 +570,7 @@
         </p>
       </div>
     </section>
+
     <!-- FAQ -->
     <section>
       <div class="section-card">
@@ -624,15 +679,14 @@
     </footer>
   </div>
 
-  <!-- ✅ ISPRAVLJENO: LocalBusiness uklonjen!
-       ❗ Dodata WebPage schema (pravilno za landing page) -->
+  <!-- WebPage schema sa pojačanim lokalnim fokusom -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Izrada web sajtova Novi Sad",
     "url": "https://mpwebstudio.rs/izrada-web-sajtova-novi-sad.html",
-    "description": "SEO landing stranica za izradu web sajtova u Novom Sadu. Moderni, brzi i profesionalni sajtovi za lokalne biznise.",
+    "description": "SEO landing stranica za izradu web sajtova i izradu sajtova u Novom Sadu. Moderni, brzi i profesionalni sajtovi za lokalne biznise.",
     "inLanguage": "sr-RS"
   }
   </script>
