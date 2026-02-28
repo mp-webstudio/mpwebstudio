@@ -86,6 +86,28 @@
 <h3 style="font-size:22px; margin-top:25px; margin-bottom:10px;">Lokacija</h3>
 <p style="color:#b9c8ff;">Novi Sad — Bistrica</p>
 </div>
+
+<!-- CONTACT FORM -->
+<div class="hero-wrapper" style="max-width:420px; flex:1;">
+<h2 style="font-size:26px; margin-bottom:15px;">Pošaljite poruku</h2>
+<p style="color:#b9c8ff; margin-bottom:18px;">
+      Pošaljite nam kratko šta Vam treba (sajt, SEO, održavanje) i javljamo se brzo.
+    </p>
+<form id="contactForm" novalidate="">
+<div style="display:grid; gap:12px;">
+<input autocomplete="name" id="name" name="name" placeholder="Ime i prezime" required="" type="text"/>
+<input autocomplete="email" id="email" name="email" placeholder="Email" required="" type="email"/>
+<input autocomplete="tel" id="phone" name="phone" placeholder="Telefon (opciono)" type="tel"/>
+<textarea id="message" name="message" placeholder="Poruka (npr. Treba mi sajt za firmu + okviran budžet)" required=""></textarea>
+</div>
+<button class="form-button" id="contactSubmit" type="submit">Pošalji poruku</button>
+<div aria-live="polite" class="form-status" id="formStatus"></div>
+<p style="color:#8ea2d9; font-size:13px; margin-top:12px; line-height:1.4;">
+      Ako forma privremeno ne radi, pišite direktno na
+      <a href="mailto:info.mpwebstudio@gmail.com" style="color:#4f8cff;">info.mpwebstudio@gmail.com</a>.
+    </p>
+</form>
+</div>
 <!-- MAP ONLY -->
 <div class="hero-wrapper" style="max-width:420px; flex:1;">
 <div class="map-box">
@@ -125,5 +147,6 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('active');
 });
 </script>
+<script src="contact.js"></script>
 </body>
 </html>
