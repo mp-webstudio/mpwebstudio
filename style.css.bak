@@ -386,8 +386,7 @@ form textarea {
 /* KONTAKT – LAYOUT (2 KARTICE + MAPA ISPOD) */
 /* ----------------------------------------------------- */
 .contact-grid {
-  /* malo šire da mapa izgleda "premium" */
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -398,14 +397,6 @@ form textarea {
 .contact-grid .hero-wrapper {
   margin-bottom: 0;
 }
-
-/* u gridu kartice treba da popune kolonu (hero-wrapper globalno ima max-width + auto margine) */
-.contact-grid .contact-card {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-
 
 .contact-card-title {
   font-size: 26px;
@@ -455,8 +446,7 @@ form textarea {
 }
 
 .contact-map .map-box {
-  /* veća i responsivna visina za premium izgled */
-  height: clamp(420px, 55vh, 680px);
+  height: 420px;
   border: 0;
   border-radius: 0;
 }
