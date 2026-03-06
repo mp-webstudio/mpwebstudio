@@ -559,3 +559,51 @@ form textarea {
     flex-direction: column;
   }
 }
+
+
+.footer-col p {
+  margin: 0 0 10px;
+}
+
+.footer-icon-link,
+.contact-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(79, 140, 255, 0.14);
+  border: 1px solid rgba(79, 140, 255, 0.32);
+  color: #dce7ff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.contact-instagram-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  background: rgba(79, 140, 255, 0.14);
+  border: 1px solid rgba(79, 140, 255, 0.35);
+  color: #dce7ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-instagram-cta:hover {
+  transform: translateY(-1px);
+  background: rgba(79, 140, 255, 0.22);
+  border-color: rgba(79, 140, 255, 0.5);
+}

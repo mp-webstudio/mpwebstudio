@@ -15,7 +15,7 @@
   const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
   // TODO: Kad deploy-ujemo backend, ovde upiši npr. "https://mpwebstudio-api.onrender.com"
-  const PROD_API_BASE_URL = "";
+  const PROD_API_BASE_URL = "https://mpwebstudio-backend.onrender.com";
 
   const API_BASE_URL = (window.MPWS_API_BASE_URL && String(window.MPWS_API_BASE_URL).trim())
     || (isLocal ? 'http://localhost:3000' : PROD_API_BASE_URL);
