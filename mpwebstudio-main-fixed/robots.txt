@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mpwebstudio.rs/sitemap.xml
