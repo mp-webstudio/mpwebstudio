@@ -59,7 +59,7 @@
     }
 
     if (!API_BASE_URL) {
-      setStatus('Kontakt forma još nije aktivirana. Pišite nam direktno na info.mpwebstudio@gmail.com.', 'err');
+      setStatus('Kontakt forma još nije aktivirana. Pišite nam direktno na info@mpwebstudio.rs.', 'err');
       return;
     }
 
@@ -67,8 +67,12 @@
     setStatus('Slanje poruke…');
 
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 25000);
+
       const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
+        mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name,
@@ -77,7 +81,10 @@
           message,
           sourcePage: window.location.href,
         }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       const data = await res.json().catch(() => ({}));
 
@@ -91,7 +98,7 @@
       form.reset();
       disableSubmit(false);
     } catch (err) {
-      setStatus('Ne mogu da se povežem sa serverom. Pokušajte ponovo ili pišite na info.mpwebstudio@gmail.com.', 'err');
+      setStatus('Ne mogu da se povežem sa serverom. Pokušajte ponovo ili pišite na info@mpwebstudio.rs.', 'err');
       disableSubmit(false);
     }
   });
