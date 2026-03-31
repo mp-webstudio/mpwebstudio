@@ -53,7 +53,13 @@
 <a href="faq.html">FAQ</a>
 <a aria-current="page" class="active" href="kontakt.html">Kontakt</a>
 </nav>
-<button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
+
+        <!-- Honeypot zaštita od botova (skriveno od korisnika) -->
+        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
+          <label for="website_hp">Ne popunjavati</label>
+          <input autocomplete="off" id="website_hp" name="website" tabindex="-1" type="text"/>
+        </div>
+        <button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
 <span></span><span></span><span></span>
 </button>
 </div>

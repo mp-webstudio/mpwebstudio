@@ -920,3 +920,14 @@ form textarea {
     font-size: 16px;
   }
 }
+
+/* -------------------------------------------------- */
+/* HERO TAGLINE (dodato uz SEO audit) */
+/* -------------------------------------------------- */
+.hero-tagline {
+  font-size: 20px;
+  color: #d0dcff;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
