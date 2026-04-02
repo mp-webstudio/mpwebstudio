@@ -14,7 +14,6 @@
 
   const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
-  // TODO: Kad deploy-ujemo backend, ovde upiši npr. "https://mpwebstudio-api.onrender.com"
   const PROD_API_BASE_URL = "https://mpwebstudio-backend.onrender.com";
 
   const API_BASE_URL = (window.MPWS_API_BASE_URL && String(window.MPWS_API_BASE_URL).trim())
@@ -55,6 +54,14 @@
 
     if (message.length < 10) {
       setStatus('Poruka mora imati bar 10 karaktera.', 'err');
+      return;
+    }
+
+    // Honeypot — ako je popunjeno, bot je, tiho odbij
+    const honeypot = String(document.getElementById('website_hp')?.value || '').trim();
+    if (honeypot) {
+      setStatus('Hvala! Poruka je poslata.', 'ok');
+      form.reset();
       return;
     }
 

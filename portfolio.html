@@ -16,7 +16,10 @@
 <title>Portfolio – Izrada Web Sajtova Novi Sad | MP Web Studio</title>
 <meta content="Portfolio MP Web Studio – pogledajte neke od naših radova. Izrada modernih i profesionalnih web sajtova za lokalne biznise u Novom Sadu. Brzo, kvalitetno i SEO optimizovano." name="description"/><link href="https://mpwebstudio.rs/portfolio.html" rel="canonical"/>
 <meta content="https://mpwebstudio.rs/img/og-image.jpg" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><meta content="index, follow" name="robots"/>
+<link href="style.css" rel="stylesheet"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -315,31 +318,6 @@
     © 2026 MP Web Studio – Sva prava zadržana
   </div>
 </footer>
-<script>
-    (() => {
-      const hamburger = document.getElementById('hamburger');
-      const mobileNav = document.getElementById('mobileNav');
-
-      if (!hamburger || !mobileNav) return;
-
-      const toggleMenu = (forceOpen) => {
-        const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !mobileNav.classList.contains('active');
-        hamburger.classList.toggle('active', shouldOpen);
-        mobileNav.classList.toggle('active', shouldOpen);
-        hamburger.setAttribute('aria-expanded', String(shouldOpen));
-        hamburger.setAttribute('aria-label', shouldOpen ? 'Zatvori meni' : 'Otvori meni');
-        hamburger.setAttribute('title', shouldOpen ? 'Zatvori meni' : 'Otvori meni');
-        mobileNav.setAttribute('aria-hidden', String(!shouldOpen));
-      };
-
-      hamburger.addEventListener('click', () => toggleMenu());
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') toggleMenu(false);
-      });
-    })();
-  </script>
+<script src="nav.js"></script>
 </body>
 </html>

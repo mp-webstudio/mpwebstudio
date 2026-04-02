@@ -16,7 +16,10 @@
 <title>Kontakt – MP Web Studio | Izrada Web Sajtova Novi Sad</title>
 <meta content="Kontaktirajte MP Web Studio iz Novog Sada. Izrada profesionalnih i modernih web sajtova za lokalne biznise. Odgovaramo u roku od 15 minuta." name="description"/><link href="https://mpwebstudio.rs/kontakt.html" rel="canonical"/>
 <meta content="https://mpwebstudio.rs/img/og-image.jpg" property="og:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><meta content="index, follow" name="robots"/>
+<link href="style.css" rel="stylesheet"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,13 +56,7 @@
 <a href="faq.html">FAQ</a>
 <a aria-current="page" class="active" href="kontakt.html">Kontakt</a>
 </nav>
-
-        <!-- Honeypot zaštita od botova (skriveno od korisnika) -->
-        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
-          <label for="website_hp">Ne popunjavati</label>
-          <input autocomplete="off" id="website_hp" name="website" tabindex="-1" type="text"/>
-        </div>
-        <button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
+<button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
 <span></span><span></span><span></span>
 </button>
 </div>
@@ -92,6 +89,9 @@
 <p>Viber: <a href="viber://chat?number=+38163582132">Klik ovde</a></p>
 <p class="contact-last">Email: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></p>
 <p class="contact-last"><span class="contact-inline-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
+<h3 class="contact-card-subtitle">Radno vreme</h3>
+<p>Pon – Pet: 9:00 – 18:00</p>
+<p class="text-muted-sm">Odgovaramo u roku od 15 minuta tokom radnog vremena.</p>
 <h3 class="contact-card-subtitle">Lokacija</h3>
 <p>Novi Sad — Bistrica</p>
 </div>
@@ -101,6 +101,11 @@
 <p class="contact-lead">Pošaljite nam kratko šta Vam treba (sajt, SEO, održavanje) i javljamo se brzo.</p>
 <form id="contactForm" novalidate="">
 <div class="contact-form-fields"><div class="form-group"><label for="name">Ime i prezime</label><input autocomplete="name" id="name" name="name" placeholder="Ime i prezime" required="" type="text"/></div><div class="form-group"><label for="email">Email adresa</label><input autocomplete="email" id="email" name="email" placeholder="Email" required="" type="email"/></div><div class="form-group"><label for="phone">Telefon (opciono)</label><input autocomplete="tel" id="phone" name="phone" placeholder="Telefon (opciono)" type="tel"/></div><div class="form-group"><label for="message">Poruka</label><textarea aria-describedby="messageHint" id="message" name="message" placeholder="Poruka (npr. Treba mi sajt za firmu + okviran budžet)" required=""></textarea><div class="form-hint" id="messageHint">Napišite ukratko šta Vam treba i okviran budžet, ako ga već imate.</div></div></div>
+<!-- Honeypot zaštita od botova (skriveno od korisnika) -->
+        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
+          <label for="website_hp">Ne popunjavati</label>
+          <input autocomplete="off" id="website_hp" name="website" tabindex="-1" type="text"/>
+        </div>
 <button class="form-button" id="contactSubmit" type="submit">Pošalji poruku</button>
 <div aria-atomic="true" aria-live="polite" class="form-status" id="formStatus" role="status"></div>
 <p class="contact-note">Ako forma privremeno ne radi, pišite direktno na <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a> ili nas zapratite na <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">Instagramu @mpwebstudio.rs</a>.</p>
@@ -139,32 +144,7 @@
   </div>
 </footer>
 <!-- SCRIPT -->
-<script>
-    (() => {
-      const hamburger = document.getElementById('hamburger');
-      const mobileNav = document.getElementById('mobileNav');
-
-      if (!hamburger || !mobileNav) return;
-
-      const toggleMenu = (forceOpen) => {
-        const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !mobileNav.classList.contains('active');
-        hamburger.classList.toggle('active', shouldOpen);
-        mobileNav.classList.toggle('active', shouldOpen);
-        hamburger.setAttribute('aria-expanded', String(shouldOpen));
-        hamburger.setAttribute('aria-label', shouldOpen ? 'Zatvori meni' : 'Otvori meni');
-        hamburger.setAttribute('title', shouldOpen ? 'Zatvori meni' : 'Otvori meni');
-        mobileNav.setAttribute('aria-hidden', String(!shouldOpen));
-      };
-
-      hamburger.addEventListener('click', () => toggleMenu());
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') toggleMenu(false);
-      });
-    })();
-  </script>
-<script src="contact.js?v=20260328-1"></script>
+<script src="nav.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
