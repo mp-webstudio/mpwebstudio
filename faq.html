@@ -1,112 +1,321 @@
-/*
-  MP Web Studio – Kontakt forma (frontend)
-  --------------------------------------
-  1) Lokalno testiranje: backend radi na http://localhost:3000
-  2) Produkcija: kada deploy-ujemo backend, upiši URL u PROD_API_BASE_URL
-*/
+<!DOCTYPE html>
 
-(function () {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
+<html lang="sr-RS">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QEXT642B7V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  const statusEl = document.getElementById('formStatus');
-  const submitBtn = document.getElementById('contactSubmit');
-
-  const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-
-  const PROD_API_BASE_URL = "https://mpwebstudio-backend.onrender.com";
-
-  const API_BASE_URL = (window.MPWS_API_BASE_URL && String(window.MPWS_API_BASE_URL).trim())
-    || (isLocal ? 'http://localhost:3000' : PROD_API_BASE_URL);
-
-  function setStatus(text, type) {
-    if (!statusEl) return;
-    statusEl.textContent = text;
-    statusEl.classList.remove('ok', 'err');
-    if (type) statusEl.classList.add(type);
-  }
-
-  function disableSubmit(disabled) {
-    if (!submitBtn) return;
-    submitBtn.disabled = disabled;
-    submitBtn.style.opacity = disabled ? '0.75' : '1';
-    submitBtn.style.cursor = disabled ? 'not-allowed' : 'pointer';
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = String(document.getElementById('name')?.value || '').trim();
-    const email = String(document.getElementById('email')?.value || '').trim();
-    const phone = String(document.getElementById('phone')?.value || '').trim();
-    const message = String(document.getElementById('message')?.value || '').trim();
-
-    // Frontend validacija (backend opet proverava)
-    if (name.length < 2) {
-      setStatus('Unesite ime (min 2 slova).', 'err');
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setStatus('Unesite ispravan email.', 'err');
-      return;
-    }
-
-    if (message.length < 10) {
-      setStatus('Poruka mora imati bar 10 karaktera.', 'err');
-      return;
-    }
-
-    // Honeypot — ako je popunjeno, bot je, tiho odbij
-    const honeypot = String(document.getElementById('website_hp')?.value || '').trim();
-    if (honeypot) {
-      setStatus('Hvala! Poruka je poslata.', 'ok');
-      form.reset();
-      return;
-    }
-
-    if (!API_BASE_URL) {
-      setStatus('Kontakt forma još nije aktivirana. Pišite nam direktno na info.mpwebstudio@gmail.com.', 'err');
-      return;
-    }
-
-    disableSubmit(true);
-    setStatus('Slanje poruke…');
-
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 25000);
-
-      const res = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          message,
-          sourcePage: window.location.href,
-        }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        setStatus(data?.message || 'Došlo je do greške. Pokušajte ponovo.', 'err');
-        disableSubmit(false);
-        return;
+  gtag('config', 'G-QEXT642B7V');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Česta pitanja | MP Web Studio – Izrada Web Sajtova Novi Sad</title>
+<meta content="Česta pitanja o izradi web sajtova, rokovima, SEO optimizaciji, održavanju i saradnji sa MP Web Studio iz Novog Sada." name="description"/><link href="https://mpwebstudio.rs/faq.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><meta content="index, follow" name="robots"/>
+<link href="style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MP Web Studio",
+  "image": "https://mpwebstudio.rs/img/og-image.jpg",
+  "url": "https://mpwebstudio.rs/",
+  "telephone": "+38163582132",
+  "email": "info.mpwebstudio@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Novi Sad",
+    "addressRegion": "Vojvodina",
+    "addressCountry": "RS"
+  },
+  "priceRange": "$$",
+  "description": "MP Web Studio – izrada profesionalnih web sajtova za lokalne biznise u Novom Sadu. Moderan dizajn, SEO optimizacija i brza isporuka uz fokus na rezultate."
+}
+</script>
+<meta content="FAQ | Česta pitanja | MP Web Studio – Izrada Web Sajtova Novi Sad" property="og:title"/><meta content="Česta pitanja o izradi web sajtova, rokovima, SEO optimizaciji, održavanju i saradnji sa MP Web Studio iz Novog Sada." property="og:description"/><meta content="website" property="og:type"/><meta content="https://mpwebstudio.rs/faq.html" property="og:url"/><meta content="https://mpwebstudio.rs/img/og-image.jpg" property="og:image"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/><meta content="summary_large_image" name="twitter:card"/><meta content="FAQ | Česta pitanja | MP Web Studio – Izrada Web Sajtova Novi Sad" name="twitter:title"/><meta content="Česta pitanja o izradi web sajtova, rokovima, SEO optimizaciji, održavanju i saradnji sa MP Web Studio iz Novog Sada." name="twitter:description"/><meta content="https://mpwebstudio.rs/img/og-image.jpg" name="twitter:image"/><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Koliko traje izrada sajta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Za jednostavnije sajtove (START paket) rok je obično 3–7 dana od trenutka kada dobijemo sve informacije. Kod većih projekata rok dogovaramo individualno, ali uvek unapred."
       }
-
-      setStatus(data?.message || 'Hvala! Poruka je poslata.', 'ok');
-      form.reset();
-      disableSubmit(false);
-    } catch (err) {
-      setStatus('Ne mogu da se povežem sa serverom. Pokušajte ponovo ili pišite na info.mpwebstudio@gmail.com.', 'err');
-      disableSubmit(false);
+    },
+    {
+      "@type": "Question",
+      "name": "Da li moram sam da pišem tekst za sajt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne morate. Dovoljno je da nam napišete kratko čime se bavite, a mi pripremamo profesionalne tekstove prilagođene web formatu i SEO-u."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Radite li optimizaciju za Google (SEO)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Svaki sajt radimo sa osnovnim SEO-om — naslovi, opisi, struktura, ključne reči i interne veze. Za napredniji SEO možemo raditi i dodatno, po dogovoru."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li mogu kasnije da menjam slike i tekst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Naravno. Radimo manje izmene besplatno ili periodično održavanje — po dogovoru, u zavisnosti od obima."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li radite izradu Google Business profila?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da — nudimo postavljanje i optimizaciju Google Business profila kao posebnu uslugu od 49€, ili besplatno uz BIZNIS i PRO paket za izradu sajta. Usluga uključuje kreiranje ili preuzimanje profila, verifikaciju lokacije, optimizaciju opisa i kategorija, dodavanje fotografija i povezivanje sa sajtom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li možete da pomognete oko Google mapa i prikaza na pretrazi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da — pomažemo i oko verifikacije lokacije, pravilnog povezivanja profila sa sajtom i prikaza na Google mapama. Dajemo i savete kako da prikupite prve recenzije, što direktno utiče na rang u lokalnoj pretrazi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Radite li samo sa firmama iz Novog Sada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne — radimo i za klijente širom Srbije, ali nam je Novi Sad baza i poznajemo lokalno tržište najbolje, što je prednost kod lokalnog SEO-a."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li su domen i hosting uračunati u cenu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Domen i hosting se najčešće plaćaju posebno, ali pomažemo oko izbora i kupovine najpovoljnije i najstabilnije opcije za vaš biznis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Šta je sledeći korak ako želim saradnju?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pošaljite kratku poruku na WhatsApp ili email o vašem biznisu — javljamo se sa predlogom strukture, okvirnom cenom i rokovima u roku od 15 minuta (tokom radnog vremena)."
+      }
     }
-  });
-})();
+  ]
+}
+</script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+<div class="container">
+<div class="logo">
+<img alt="MP Web Studio logo" src="img/favicon-64-1.png"/>
+<span>MP WEB STUDIO</span>
+</div>
+<nav class="nav">
+<a href="index.html">Početna</a>
+<a href="o-nama.html">O nama</a>
+<a href="usluge.html">Usluge</a>
+<a href="portfolio.html">Portfolio</a>
+<a aria-current="page" class="active" href="faq.html">FAQ</a>
+<a href="kontakt.html">Kontakt</a>
+</nav>
+<button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<!-- MOBILE NAV -->
+<div aria-hidden="true" aria-label="Mobilna navigacija" class="mobile-nav" id="mobileNav">
+<a href="index.html">Početna</a>
+<a href="o-nama.html">O nama</a>
+<a href="usluge.html">Usluge</a>
+<a href="portfolio.html">Portfolio</a>
+<a aria-current="page" href="faq.html">FAQ</a>
+<a href="kontakt.html">Kontakt</a>
+</div>
+<!-- PAGE HERO -->
+<section class="page-section">
+<h1 class="page-title">Česta pitanja (FAQ)</h1>
+<p class="page-subtitle">
+      Odgovori na najčešća pitanja koja dobijamo u vezi sa izradom web sajtova, rokovima, SEO-om i saradnjom.
+    </p>
+</section>
+<!-- FAQ ACCORDION -->
+<section class="page-section">
+<div class="container faq-container">
+<div class="hero-wrapper faq-wrapper">
+<!-- Q1 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-1" aria-expanded="false" class="faq-question" id="faq-question-1" type="button">
+<span>Koliko traje izrada sajta?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-1" class="faq-answer" hidden="" id="faq-answer-1" role="region">
+<div class="faq-answer-inner">
+              Za jednostavnije sajtove (START paket) rok je obično 3–7 dana od trenutka kada dobijemo sve informacije.
+              Kod većih projekata rok dogovaramo individualno, ali uvek unapred.
+            </div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-2" aria-expanded="false" class="faq-question" id="faq-question-2" type="button">
+<span>Da li moram sam da pišem tekst za sajt?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-2" class="faq-answer" hidden="" id="faq-answer-2" role="region">
+<div class="faq-answer-inner">
+              Ne morate. Dovoljno je da nam napišete kratko čime se bavite, a mi pripremamo profesionalne tekstove
+              prilagođene web formatu i SEO-u.
+            </div>
+</div>
+</div>
+<!-- Q3 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-3" aria-expanded="false" class="faq-question" id="faq-question-3" type="button">
+<span>Radite li optimizaciju za Google (SEO)?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-3" class="faq-answer" hidden="" id="faq-answer-3" role="region">
+<div class="faq-answer-inner">
+              Da. Svaki sajt radimo sa osnovnim SEO-om — naslovi, opisi, struktura, ključne reči i interne veze.
+              Za napredniji SEO možemo raditi i dodatno, po dogovoru.
+            </div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-4" aria-expanded="false" class="faq-question" id="faq-question-4" type="button">
+<span>Da li mogu kasnije da menjam slike i tekst?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-4" class="faq-answer" hidden="" id="faq-answer-4" role="region">
+<div class="faq-answer-inner">
+              Naravno. Radimo manje izmene besplatno ili periodično održavanje — po dogovoru, u zavisnosti od obima.
+            </div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-controls="faq-answer-5" aria-expanded="false" class="faq-question" id="faq-question-5" type="button">
+<span>Da li radite izradu Google Business profila?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-5" class="faq-answer" hidden="" id="faq-answer-5" role="region">
+<div class="faq-answer-inner">
+              Da — nudimo postavljanje i optimizaciju Google Business profila kao posebnu uslugu od 49€, ili besplatno
+              uz BIZNIS i PRO paket za izradu sajta. Usluga uključuje kreiranje ili preuzimanje profila,
+              verifikaciju lokacije, optimizaciju opisa i kategorija, dodavanje fotografija i povezivanje sa sajtom.
+              Više detalja na stranici <a href="usluge.html" class="link-accent">Usluge</a>.
+            </div>
+</div>
+</div>
+<!-- Q5b (staro Q5) -->
+<div class="faq-item">
+<button aria-controls="faq-answer-5b" aria-expanded="false" class="faq-question" id="faq-question-5b" type="button">
+<span>Da li možete da pomognete oko Google mapa i prikaza na pretrazi?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-5b" class="faq-answer" hidden="" id="faq-answer-5b" role="region">
+<div class="faq-answer-inner">
+              Da — pomažemo i oko verifikacije lokacije, pravilnog povezivanja profila sa sajtom
+              i prikaza na Google mapama. Dajemo i savete kako da prikupite prve recenzije, što direktno
+              utiče na rang u lokalnoj pretrazi.
+            </div>
+</div>
+</div>
+<!-- Q6 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-6" aria-expanded="false" class="faq-question" id="faq-question-6" type="button">
+<span>Radite li samo sa firmama iz Novog Sada?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-6" class="faq-answer" hidden="" id="faq-answer-6" role="region">
+<div class="faq-answer-inner">
+              Ne — radimo i za klijente širom Srbije, ali nam je Novi Sad baza i poznajemo lokalno tržište najbolje,
+              što je prednost kod lokalnog SEO-a.
+            </div>
+</div>
+</div>
+<!-- Q7 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-7" aria-expanded="false" class="faq-question" id="faq-question-7" type="button">
+<span>Da li su domen i hosting uračunati u cenu?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-7" class="faq-answer" hidden="" id="faq-answer-7" role="region">
+<div class="faq-answer-inner">
+              Domen i hosting se najčešće plaćaju posebno, ali pomažemo oko izbora i kupovine najpovoljnije
+              i najstabilnije opcije za vaš biznis.
+            </div>
+</div>
+</div>
+<!-- Q8 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-8" aria-expanded="false" class="faq-question" id="faq-question-8" type="button">
+<span>Šta je sledeći korak ako želim saradnju?</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</button>
+<div aria-labelledby="faq-question-8" class="faq-answer" hidden="" id="faq-answer-8" role="region">
+<div class="faq-answer-inner">
+              Pošaljite kratku poruku na WhatsApp ili email o vašem biznisu — javljamo se sa predlogom strukture,
+              okvirnom cenom i rokovima u roku od 15 minuta (tokom radnog vremena).
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="page-section">
+<div class="container container-sm text-center">
+<h2 class="cta-title">Niste našli odgovor koji tražite?</h2>
+<p class="cta-desc">
+        Pišite nam kratko pitanje ili ideju — odgovaramo brzo i konkretno.
+      </p>
+<a class="btn-primary btn-lg" href="kontakt.html">
+        Kontaktirajte nas
+      </a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container footer-wrapper">
+<div class="footer-col">
+<h3>MP Web Studio</h3>
+<p>Izrada profesionalnih web sajtova • Novi Sad</p>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
+<p>WhatsApp / Viber: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
+<p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">✉</span><span>Email:</span> <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></span></p>
+<p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
+</div>
+<div class="footer-col">
+<a class="footer-cta" href="kontakt.html">Zakažite konsultaciju</a>
+</div>
+</div>
+<div class="footer-bottom">
+    © 2026 MP Web Studio – Sva prava zadržana
+  </div>
+</footer>
+<!-- JS: hamburger + FAQ accordion -->
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,150 +1,17 @@
-<!DOCTYPE html>
-
-<html lang="sr-RS">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QEXT642B7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QEXT642B7V');
-</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kontakt – MP Web Studio | Izrada Web Sajtova Novi Sad</title>
-<meta content="Kontaktirajte MP Web Studio iz Novog Sada. Izrada profesionalnih i modernih web sajtova za lokalne biznise. Odgovaramo u roku od 15 minuta." name="description"/><link href="https://mpwebstudio.rs/kontakt.html" rel="canonical"/>
-<meta content="https://mpwebstudio.rs/img/og-image.jpg" property="og:image"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><meta content="index, follow" name="robots"/>
-<link href="style.css" rel="stylesheet"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "MP Web Studio",
-  "image": "https://mpwebstudio.rs/img/og-image.jpg",
-  "url": "https://mpwebstudio.rs/",
-  "telephone": "+38163582132",
-  "email": "info.mpwebstudio@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Novi Sad",
-    "addressRegion": "Vojvodina",
-    "addressCountry": "RS"
-  },
-  "priceRange": "$$",
-  "description": "MP Web Studio – izrada profesionalnih web sajtova za lokalne biznise u Novom Sadu. Moderan dizajn, SEO optimizacija i brza isporuka uz fokus na rezultate."
-}
-</script>
-<meta content="Kontakt – MP Web Studio | Izrada Web Sajtova Novi Sad" property="og:title"/><meta content="Kontaktirajte MP Web Studio iz Novog Sada. Izrada profesionalnih i modernih web sajtova za lokalne biznise. Odgovaramo u roku od 15 minuta." property="og:description"/><meta content="website" property="og:type"/><meta content="https://mpwebstudio.rs/kontakt.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><meta content="Kontakt – MP Web Studio | Izrada Web Sajtova Novi Sad" name="twitter:title"/><meta content="Kontaktirajte MP Web Studio iz Novog Sada. Izrada profesionalnih i modernih web sajtova za lokalne biznise. Odgovaramo u roku od 15 minuta." name="twitter:description"/><meta content="https://mpwebstudio.rs/img/og-image.jpg" name="twitter:image"/></head>
-<body>
-<!-- HEADER -->
-<header class="header">
-<div class="container">
-<div class="logo">
-<img alt="MP Web Studio logo" src="img/favicon-64-1.png"/>
-<span>MP WEB STUDIO</span>
-</div>
-<nav class="nav">
-<a href="index.html">Početna</a>
-<a href="o-nama.html">O nama</a>
-<a href="usluge.html">Usluge</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="faq.html">FAQ</a>
-<a aria-current="page" class="active" href="kontakt.html">Kontakt</a>
-</nav>
-<button aria-controls="mobileNav" aria-expanded="false" aria-haspopup="true" aria-label="Otvori meni" class="hamburger" id="hamburger" title="Otvori meni" type="button">
-<span></span><span></span><span></span>
-</button>
-</div>
-</header>
-<!-- MOBILE NAV -->
-<div aria-hidden="true" aria-label="Mobilna navigacija" class="mobile-nav" id="mobileNav">
-<a href="index.html">Početna</a>
-<a href="o-nama.html">O nama</a>
-<a href="usluge.html">Usluge</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="faq.html">FAQ</a>
-<a aria-current="page" href="kontakt.html">Kontakt</a>
-</div>
-<!-- HERO -->
-<section class="page-section">
-<h1 class="page-title">Kontakt</h1>
-<p class="page-subtitle">
-    Tu smo da odgovorimo brzo, jasno i konkretno. Najčešće se javljamo u roku od 15 minuta.
-  </p>
-</section>
-<!-- CONTACT + MAP -->
-<section class="page-section">
-<div class="container">
-<div class="contact-grid">
-<!-- CONTACT INFO -->
-<div class="hero-wrapper contact-card contact-info">
-<h2 class="contact-card-title">Kontakt podaci</h2>
-<p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
-<p>WhatsApp: <a href="https://wa.me/38163582132">Klik ovde</a></p>
-<p>Viber: <a href="viber://chat?number=+38163582132">Klik ovde</a></p>
-<p class="contact-last">Email: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></p>
-<p class="contact-last"><span class="contact-inline-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
-<h3 class="contact-card-subtitle">Radno vreme</h3>
-<p>Pon – Pet: 9:00 – 18:00</p>
-<p class="text-muted-sm">Odgovaramo u roku od 15 minuta tokom radnog vremena.</p>
-<h3 class="contact-card-subtitle">Lokacija</h3>
-<p>Novi Sad — Bistrica</p>
-</div>
-<!-- CONTACT FORM -->
-<div class="hero-wrapper contact-card contact-form-card">
-<h2 class="contact-card-title">Pošaljite poruku</h2>
-<p class="contact-lead">Pošaljite nam kratko šta Vam treba (sajt, SEO, održavanje) i javljamo se brzo.</p>
-<form id="contactForm" novalidate="">
-<div class="contact-form-fields"><div class="form-group"><label for="name">Ime i prezime</label><input autocomplete="name" id="name" name="name" placeholder="Ime i prezime" required="" type="text"/></div><div class="form-group"><label for="email">Email adresa</label><input autocomplete="email" id="email" name="email" placeholder="Email" required="" type="email"/></div><div class="form-group"><label for="phone">Telefon (opciono)</label><input autocomplete="tel" id="phone" name="phone" placeholder="Telefon (opciono)" type="tel"/></div><div class="form-group"><label for="message">Poruka</label><textarea aria-describedby="messageHint" id="message" name="message" placeholder="Poruka (npr. Treba mi sajt za firmu + okviran budžet)" required=""></textarea><div class="form-hint" id="messageHint">Napišite ukratko šta Vam treba i okviran budžet, ako ga već imate.</div></div></div>
-<!-- Honeypot zaštita od botova (skriveno od korisnika) -->
-        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
-          <label for="website_hp">Ne popunjavati</label>
-          <input autocomplete="off" id="website_hp" name="website" tabindex="-1" type="text"/>
-        </div>
-<button class="form-button" id="contactSubmit" type="submit">Pošalji poruku</button>
-<div aria-atomic="true" aria-live="polite" class="form-status" id="formStatus" role="status"></div>
-<p class="contact-note">Ako forma privremeno ne radi, pišite direktno na <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a> ili nas zapratite na <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">Instagramu @mpwebstudio.rs</a>.</p>
-<a class="contact-instagram-cta" href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">Zapratite nas na Instagramu</a>
-</form>
-</div>
-<!-- MAP (FULL-WIDTH CARD) -->
-<div class="hero-wrapper contact-card contact-map">
-<div class="map-box">
-<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.3556806266503!2d19.7902607!3d45.251709799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11c87f3b62cf%3A0xa81c13d07d35817e!2sBistrica%2C%20Novi%20Sad!5e0!3m2!1ssr!2srs!4v1700000000000" style="border:0;" title="Lokacija MP Web Studio na Google mapi" width="100%"></iframe>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FOOTER -->
-<footer class="footer">
-<div class="container footer-wrapper">
-<div class="footer-col">
-<h3>MP Web Studio</h3>
-<p>Izrada profesionalnih web sajtova • Novi Sad</p>
-</div>
-<div class="footer-col">
-<h4>Kontakt</h4>
-<p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
-<p>WhatsApp / Viber: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
-<p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">✉</span><span>Email:</span> <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></span></p>
-<p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
-</div>
-<div class="footer-col">
-<a class="footer-cta" href="kontakt.html">Zakažite konsultaciju</a>
-</div>
-</div>
-<div class="footer-bottom">
-    © 2026 MP Web Studio – Sva prava zadržana
-  </div>
-</footer>
-<!-- SCRIPT -->
-<script src="nav.js"></script>
-<script src="contact.js"></script>
-</body>
-</html>
+(function () {
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  if (!hamburger || !mobileNav) return;
+  const toggle = (open) => {
+    const on = typeof open === 'boolean' ? open : !mobileNav.classList.contains('active');
+    hamburger.classList.toggle('active', on);
+    mobileNav.classList.toggle('active', on);
+    hamburger.setAttribute('aria-expanded', String(on));
+    hamburger.setAttribute('aria-label', on ? 'Zatvori meni' : 'Otvori meni');
+    hamburger.setAttribute('title', on ? 'Zatvori meni' : 'Otvori meni');
+    mobileNav.setAttribute('aria-hidden', String(!on));
+  };
+  hamburger.addEventListener('click', () => toggle());
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+})();
