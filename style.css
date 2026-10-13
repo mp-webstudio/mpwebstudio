@@ -1129,3 +1129,8 @@ form textarea {
 .cta-title { color: #fff; margin-bottom: 15px; }
 .cta-desc { color: #b9c8ff; margin-bottom: 30px; }
 .mt-md { margin-top: 24px; }
+
+/* Direct contact options */
+.contact-actions { display: grid; gap: 16px; margin: 24px 0; }
+.contact-actions a { display: block; text-align: center; overflow-wrap: anywhere; }
+.contact-direct-card .contact-note { overflow-wrap: anywhere; }
