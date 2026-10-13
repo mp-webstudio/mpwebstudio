@@ -20,6 +20,15 @@
 <meta property="og:image:height" content="630"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="img/favicon.ico" rel="icon" sizes="any"/><link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><meta content="index, follow" name="robots"/>
 <link href="style.css" rel="stylesheet"/>
+<style>
+/* Center the two featured projects while preserving their desktop width. */
+.portfolio-featured-grid { justify-content: center; }
+@media (min-width: 1181px) {
+  .portfolio-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, calc((100% - 44px) / 3)));
+  }
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
