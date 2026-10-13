@@ -1134,3 +1134,5 @@ form textarea {
 .contact-actions { display: grid; gap: 16px; margin: 24px 0; }
 .contact-actions a { display: block; text-align: center; overflow-wrap: anywhere; }
 .contact-direct-card .contact-note { overflow-wrap: anywhere; }
+
+.contact-actions a.btn-primary { color: #fff; }
