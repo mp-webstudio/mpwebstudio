@@ -86,7 +86,7 @@
 <h2 class="contact-card-title">Kontakt podaci</h2>
 <p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
 <p>WhatsApp: <a href="https://wa.me/38163582132">Klik ovde</a></p>
-<p>Viber: <a href="viber://chat?number=+38163582132">Klik ovde</a></p>
+<p>Viber: <a href="viber://chat?number=%2B38163582132">Klik ovde</a></p>
 <p class="contact-last">Email: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></p>
 <p class="contact-last"><span class="contact-inline-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
 <h3 class="contact-card-subtitle">Radno vreme</h3>
@@ -95,22 +95,18 @@
 <h3 class="contact-card-subtitle">Lokacija</h3>
 <p>Novi Sad — Bistrica</p>
 </div>
-<!-- CONTACT FORM -->
-<div class="hero-wrapper contact-card contact-form-card">
-<h2 class="contact-card-title">Pošaljite poruku</h2>
-<p class="contact-lead">Pošaljite nam kratko šta Vam treba (sajt, SEO, održavanje) i javljamo se brzo.</p>
-<form id="contactForm" novalidate="">
-<div class="contact-form-fields"><div class="form-group"><label for="name">Ime i prezime</label><input autocomplete="name" id="name" name="name" placeholder="Ime i prezime" required="" type="text"/></div><div class="form-group"><label for="email">Email adresa</label><input autocomplete="email" id="email" name="email" placeholder="Email" required="" type="email"/></div><div class="form-group"><label for="phone">Telefon (opciono)</label><input autocomplete="tel" id="phone" name="phone" placeholder="Telefon (opciono)" type="tel"/></div><div class="form-group"><label for="message">Poruka</label><textarea aria-describedby="messageHint" id="message" name="message" placeholder="Poruka (npr. Treba mi sajt za firmu + okviran budžet)" required=""></textarea><div class="form-hint" id="messageHint">Napišite ukratko šta Vam treba i okviran budžet, ako ga već imate.</div></div></div>
-<!-- Honeypot zaštita od botova (skriveno od korisnika) -->
-        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
-          <label for="website_hp">Ne popunjavati</label>
-          <input autocomplete="off" id="website_hp" name="website" tabindex="-1" type="text"/>
-        </div>
-<button class="form-button" id="contactSubmit" type="submit">Pošalji poruku</button>
-<div aria-atomic="true" aria-live="polite" class="form-status" id="formStatus" role="status"></div>
-<p class="contact-note">Ako forma privremeno ne radi, pišite direktno na <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a> ili nas zapratite na <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">Instagramu @mpwebstudio.rs</a>.</p>
-<a class="contact-instagram-cta" href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">Zapratite nas na Instagramu</a>
-</form>
+<!-- DIRECT CONTACT -->
+<div class="hero-wrapper contact-card contact-direct-card">
+<h2 class="contact-card-title">Kako želite da nas kontaktirate?</h2>
+<p class="contact-lead">Napišite čime se bavite i kakav sajt Vam treba. Izaberite način kontakta koji Vam najviše odgovara.</p>
+<div class="contact-actions">
+<a class="btn-primary" href="https://wa.me/38163582132?text=Zanima%20me%20izrada%20sajta%20za%20moj%20biznis.%20Bavimo%20se%3A%20">Pošalji WhatsApp poruku</a>
+<a class="btn-secondary" href="viber://chat?number=%2B38163582132">Pošalji Viber poruku</a>
+<a class="btn-secondary" href="mailto:info.mpwebstudio@gmail.com?subject=Upit%20za%20izradu%20sajta">Pošalji e-mail</a>
+<a class="btn-secondary" href="tel:+38163582132">Pozovi +381 63 582 132</a>
+</div>
+<p class="contact-note">E-mail dugme otvara Vašu aplikaciju za poštu. Adresu možete i kopirati: <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a>.</p>
+<p class="contact-note">Za Viber poruku potrebno je da imate instaliran Viber.</p>
 </div>
 <!-- MAP (FULL-WIDTH CARD) -->
 <div class="hero-wrapper contact-card contact-map">
@@ -131,7 +127,8 @@
 <div class="footer-col">
 <h4>Kontakt</h4>
 <p>Telefon: <a href="tel:+38163582132">+381 63 582 132</a></p>
-<p>WhatsApp / Viber: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
+<p>WhatsApp: <a href="https://wa.me/38163582132">+381 63 582 132</a></p>
+<p>Viber: <a href="viber://chat?number=%2B38163582132">+381 63 582 132</a></p>
 <p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">✉</span><span>Email:</span> <a href="mailto:info.mpwebstudio@gmail.com">info.mpwebstudio@gmail.com</a></span></p>
 <p><span class="footer-icon-link"><span aria-hidden="true" class="footer-icon">◎</span><span>Instagram:</span> <a href="https://www.instagram.com/mpwebstudio.rs/" rel="noopener noreferrer" target="_blank">@mpwebstudio.rs</a></span></p>
 </div>
@@ -145,6 +142,6 @@
 </footer>
 <!-- SCRIPT -->
 <script src="nav.js"></script>
-<script src="contact.js"></script>
+<script src="contact-links.js"></script>
 </body>
 </html>
